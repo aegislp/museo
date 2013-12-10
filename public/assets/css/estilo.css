@@ -1,0 +1,12 @@
+.navbar a{
+	color:yellow !important;
+}
+.navbar {
+	background-color:#0D8AB8;
+}	
+.col-md-4 {
+    width: 100% !important;
+}
+.thumbnail > img {
+    display: inline !important;
+  }  
