@@ -17,17 +17,23 @@ class SalasController extends \BaseController {
  
 
 	/**
-	 * Display the specified resource.
+	 * Mostrar una sala espesifica.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		return "elijio la sala $id";
+		$sala =Sala::find($id);
+		$salas =Sala::getActivas();
+		return View::make('salas.sala',array('salas'=>$salas,'seleccion'=>$sala));
 	}
 
 	 
-	 
+	public function postAjax(){
+
+		$sala = Sala::find(Input::get('sala'));
+		return $sala->descripcion;
+	} 
 
 }

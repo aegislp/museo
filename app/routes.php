@@ -16,4 +16,6 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+//salas
+Route::post('salas/ajax','SalasController@postAjax');
 Route::resource('salas','SalasController');

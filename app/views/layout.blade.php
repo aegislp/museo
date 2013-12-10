@@ -30,8 +30,8 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Salas</a></li>
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/salas">Salas</a></li>
       <li><a href="#">Objetos</a></li>
       <li><a href="#">Recorrido</a></li>
       <li><a href="#">El Museo</a></li>
@@ -65,6 +65,7 @@
    
     {{ HTML::script('assets/js/jquery-2.0.3.min.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}
+   
     @yield('script')
 
   </body>

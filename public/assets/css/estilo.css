@@ -1,5 +1,6 @@
 .navbar a{
 	color:yellow !important;
+	font-weight: bold;
 }
 .navbar {
 	background-color:#0D8AB8;
@@ -7,6 +8,91 @@
 .col-md-4 {
     width: 100% !important;
 }
-.thumbnail > img {
+.salas .thumbnail > img {
     display: inline !important;
+    float: left;
+    width: 30% !important;
   }  
+.salas .thumbnail .caption {
+	width: 68% !important;
+	float: left;
+}
+.salas.thumbnail {
+	width: 100% !important;
+	display: inline-block !important;
+	cursor: pointer;
+} 
+
+.salas .thumbnail .caption a{
+	float: right;
+}
+
+
+
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+ 
+ 
+ 
+ 
+.tabs-left > .nav-tabs > li 
+  {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a 
+  {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+#select_sala{
+		display: none;
+	}
+@media screen and (max-width:500px){
+	#ul_menu{
+		display: none;
+	}
+	#select_sala{
+		display: block;
+	}
+
+}  
