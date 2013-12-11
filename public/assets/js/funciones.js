@@ -5,7 +5,7 @@ function cambiar_sala(id_sala){
 		'/museo/public/salas/ajax',
 		{sala:id_sala},
 		function (response){
-			$('#contenedor_sala').text(response)
+			$('#contenedor_sala').empty().append(response);
 		}
 	)
  

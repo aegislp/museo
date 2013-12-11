@@ -18,4 +18,6 @@ Route::get('/', function()
 
 //salas
 Route::post('salas/ajax','SalasController@postAjax');
+
+Route::resource('salas/objetos','ObjetosController');
 Route::resource('salas','SalasController');

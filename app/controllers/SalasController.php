@@ -25,6 +25,11 @@ class SalasController extends \BaseController {
 	public function show($id)
 	{
 		$sala =Sala::find($id);
+
+		if(is_null($sala)){
+			App::abort(404,'Sala no encontrada');
+		}
+
 		$salas =Sala::getActivas();
 		return View::make('salas.sala',array('salas'=>$salas,'seleccion'=>$sala));
 	}
@@ -33,7 +38,7 @@ class SalasController extends \BaseController {
 	public function postAjax(){
 
 		$sala = Sala::find(Input::get('sala'));
-		return $sala->descripcion;
+		return View::make('salas.detalle',array('seleccion'=>$sala));
 	} 
 
 }
