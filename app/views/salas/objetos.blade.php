@@ -32,4 +32,11 @@
     </div>
     @endforeach
 </div>  
+
+
+ 
+@stop
+
+@section('script')
+{HTML::script()}
 @stop
