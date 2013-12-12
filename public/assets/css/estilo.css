@@ -84,6 +84,13 @@
   *border-right-color: #ffffff;
 }
 
+
+
+.salas.thumbnail{
+  width: 100% !important;
+  display: inline-block !important;
+  
+}
 #select_sala{
 		display: none;
 	}

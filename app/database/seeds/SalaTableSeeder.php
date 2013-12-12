@@ -4,7 +4,7 @@
 
 		public function run(){
 
-			DB::table('salas')->delete();
+			DB::table('salas')->truncate();
 
 			Sala::create( array(
 				'numero' => 1 , 

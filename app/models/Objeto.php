@@ -10,4 +10,9 @@ class Objeto extends Eloquent {
 	{
 		return $this->belongsTo('Sala');
 	}
+
+	public function categoria()
+	{
+		return $this->belongsTo('Categoria');
+	}
 }

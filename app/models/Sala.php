@@ -7,6 +7,10 @@
 
 			return $this->hasMany('Objeto');
 		}
+		public function categorias(){
+
+			return $this->hasMany('Categoria');
+		}
 
 		public static function getActivas(){
 

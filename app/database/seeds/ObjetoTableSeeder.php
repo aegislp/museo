@@ -11,6 +11,7 @@ class ObjetoTableSeeder extends Seeder {
 
 
 			'sala_id'=>1,
+			'categoria_id'=>($i % 2) + 1,
 			'nombre'=>'Objeto'.$i,
 			'nombre_cientifico'=>'Objeto'.$i,
 			'descripcion'=>"asdddddddddddddddddddddddddddddddddddddddddddddddddddd asd  asdasdasd",

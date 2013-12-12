@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjetosTable extends Migration {
+class CreateCategoriasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,17 +11,13 @@ class CreateObjetosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('objetos',function($table){
+		Schema::create('categorias',function($table){
 
 			$table->increments('id');
 			$table->integer('sala_id');
-			$table->integer('categoria_id');
 			$table->string('nombre');
-			$table->string('nombre_cientifico');
-			$table->string('descripcion');
-			$table->string('archivo');
-			$table->timestamps();
 
+			$table->timestamps();
 		});
 	}
 
@@ -32,7 +28,7 @@ class CreateObjetosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('objetos');
+		Schema::drop('categorias');
 	}
 
 }

@@ -23,7 +23,7 @@
 	@foreach(glob('assets/img/objetos/'.$objeto->id.'/galeria/*.jpg') as $imagen)
 
 	<p>{{$imagen}}<p>
-
+ 
 	@endforeach
 </div>
 

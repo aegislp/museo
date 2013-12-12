@@ -2,11 +2,6 @@
 
 class SalasController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		$salas = Sala::getActivas();
@@ -15,13 +10,20 @@ class SalasController extends \BaseController {
 	}
 
  
+	public function objetos($sala){
+		$sala = Sala::find($sala);
+		
+		if(is_null($sala)){
+			App::abort(404,'Sala no encontrada');
+		}
 
-	/**
-	 * Mostrar una sala espesifica.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+		 
+
+		return View::make('salas.objetos',array('sala'=>$sala ));
+
+	}
+
+	 
 	public function show($id)
 	{
 		$sala =Sala::find($id);

@@ -19,5 +19,6 @@ Route::get('/', function()
 //salas
 Route::post('salas/ajax','SalasController@postAjax');
 
-Route::resource('salas/objetos','ObjetosController');
+Route::get('salas/{sala}/objetos','SalasController@objetos');
+//Route::resource('salas/objetos','ObjetosController');
 Route::resource('salas','SalasController');
