@@ -3,6 +3,13 @@
 @section('title')
     Museo: {{$sala->nombre}} - Objetos
 @stop 
+
+ 
+@section('css')
+{{HTML::style('assets/fancybox/jquery.fancybox.css')}}
+@stop
+
+
 @section('contenido')
 
 <div class="col-lg-2">
@@ -32,11 +39,22 @@
     </div>
     @endforeach
 </div>  
-
+<a id="single_image" href="http://127.0.01/museo/public/assets/img/objetos/10/thumbnail.png">
+    <img src="http://127.0.01/museo/public/assets/img/objetos/10/thumbnail.png" alt=""/>
+</a>
 
  
 @stop
 
 @section('script')
-{HTML::script()}
+{{HTML::script('assets/fancybox/jquery.fancybox.pack.js')}}
+  
+<script type="text/javascript">
+    
+$(document).ready(function(){
+    $("#single_image").fancybox();
+    
+})
+
+</script>
 @stop
