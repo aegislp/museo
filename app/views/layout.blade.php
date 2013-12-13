@@ -2,11 +2,16 @@
 <html>
   <head>
     <title>@yield('title', 'Aprendiendo Laravel')</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="utf8"/>
     <!-- Bootstrap -->
     {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
     {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
     @yield('css')
+    {{ HTML::script('assets/js/jquery-1.10.1.min.js') }}
+    {{ HTML::script('assets/js/bootstrap.min.js') }}
+   
+    @yield('script')
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
@@ -31,7 +36,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Home</a></li>
-      <li><a href="/salas">Salas</a></li>
+      <li><a href="{{base_path()}}/salas">Salas</a></li>
       <li><a href="#">Objetos</a></li>
       <li><a href="#">Recorrido</a></li>
       <li><a href="#">El Museo</a></li>
@@ -63,10 +68,6 @@
       </footer>
     </div> <!-- /container -->
    
-    {{ HTML::script('assets/js/jquery-2.0.3.min.js') }}
-    {{ HTML::script('assets/js/bootstrap.min.js') }}
-   
-    @yield('script')
-
+    
   </body>
 </html>

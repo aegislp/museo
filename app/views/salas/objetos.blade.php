@@ -6,7 +6,7 @@
 
  
 @section('css')
-{{HTML::style('assets/fancybox/jquery.fancybox.css')}}
+{{HTML::style('assets/fancy/jquery.fancybox.css')}}
 @stop
 
 
@@ -28,7 +28,7 @@
         <div class="panel-body">
             @foreach($categoria->objetos as $objeto) 
                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="{{ URL::route('ajax_objetos',$objeto->id)}}"   class="fancybox fancybox.ajax thumbnail">
                          {{HTML::image('assets/img/objetos/'.$objeto->id.'/thumbnail.png')}}
                      </a>
                 </div>
@@ -39,22 +39,26 @@
     </div>
     @endforeach
 </div>  
-<a id="single_image" href="http://127.0.01/museo/public/assets/img/objetos/10/thumbnail.png">
-    <img src="http://127.0.01/museo/public/assets/img/objetos/10/thumbnail.png" alt=""/>
-</a>
-
  
 @stop
 
 @section('script')
-{{HTML::script('assets/fancybox/jquery.fancybox.pack.js')}}
-  
+{{HTML::script('assets/fancy/jquery.fancybox.js')}}
+ 
 <script type="text/javascript">
     
 $(document).ready(function(){
-    $("#single_image").fancybox();
-    
-})
+ 
+ 
+
+            $('.fancybox').fancybox();
+ 
+
+      
+  
+
+ 
+ })  
 
 </script>
 @stop

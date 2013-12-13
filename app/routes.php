@@ -18,7 +18,10 @@ Route::get('/', function()
 
 //salas
 Route::post('salas/ajax','SalasController@postAjax');
-
 Route::get('salas/{sala}/objetos','SalasController@objetos');
-//Route::resource('salas/objetos','ObjetosController');
 Route::resource('salas','SalasController');
+
+
+//objetos
+Route::get('ajax/objetos/{objeto_id}',array('as'=>'ajax_objetos', 'uses'=>'ObjetosController@ajax'));
+Route::resource('objetos','ObjetosController');

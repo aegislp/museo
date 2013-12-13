@@ -7,6 +7,12 @@ class ObjetosController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	public function ajax($objeto_id)
+	{
+		$objeto = Objeto::find($objeto_id);
+		return View::make('objetos.preview',array('objeto'=>$objeto));
+	}
+
 	public function index()
 	{
 		//
