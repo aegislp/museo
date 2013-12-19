@@ -35,8 +35,8 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="{{base_path()}}/salas">Salas</a></li>
+      <li class=""><a href="{{URL::route('home')}}">Home</a></li>
+      <li><a href="{{ URL::route('salas.index')}}">Salas</a></li>
       <li><a href="#">Objetos</a></li>
       <li><a href="#">Recorrido</a></li>
       <li><a href="#">El Museo</a></li>
@@ -50,13 +50,16 @@
     </form>
      
   </div><!-- /.navbar-collapse -->
+
 </nav>
     
 
     <div class="container">
+
       <!-- Example row of columns -->
       <div class="row" style="margin-top:5em;">
-     
+      
+
         @yield('contenido') 
          
       </div>

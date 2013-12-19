@@ -3,10 +3,16 @@
 @section('title')  
    Museo: Salas   
 @stop
+
+
+
 @section('contenido')
+
+  @include('nav',array('nav'=> array('home'=>'home','salas'=>'')))
+
  <div class="salas">
 	@foreach ($salas as $sala)
-  <a href="/salas/{{$sala->id}}">
+  <a href="{{ URL::route('salas.show',$sala->id) }}">
   	<div class="row">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail salas">
@@ -23,3 +29,5 @@
 	@endforeach
 </div>
 @stop
+
+ 

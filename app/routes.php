@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/',array( 'as'=>'home',function()
 {
 	return View::make('index');
-});
+}));
 
 //salas
 Route::post('salas/ajax','SalasController@postAjax');
