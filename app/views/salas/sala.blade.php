@@ -14,8 +14,7 @@
 			<option value="{{$sala->id}}">{{$sala->nombre}}</option>
 			 @endforeach
 		</select>
-		<br>
-		<br>
+	 
 			
 		 <!-- tabs left -->
       <div class="tabbable tabs-left">
@@ -30,7 +29,7 @@
         </ul>
         <div class="tab-content col-md-offset-2">
          <div class="tab-pane active" id="contenedor_sala">
-         <h1>{{$sala->nombre}}</h1> 	
+         <h1>{{$seleccion->nombre}}</h1> 	
       			<hr>
             {{$seleccion->descripcion}}
         	  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -40,33 +39,16 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             <hr>
-             
-           @foreach(glob('assets/img/salas/'.$seleccion->id.'/{$seleccion->*_s.jpg') as $imagen)
-             <div class="col-xs-6 col-md-3">
-              <a class="fancybox" href="{{asset('img/salas/'.$. ')  }}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">{{HTML::image('assets/img/objetos/'.$objeto->id.'/thumbnail.png')}}</a>
-
-            <a href="/salas/objetos/{{$objeto->id}}" class="fancybox thumbnail">
-
-
-             
-            </a>
-            </div>
+            
+            <p> 
+            @foreach( glob('assets/img/salas/'.$seleccion->id.'/*_s.jpg')  as $imagen)
+              <a class="fancybox" href="/museo/public/{{str_replace('_s','_b',$imagen)}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">{{HTML::image($imagen)}}</a>
             @endforeach
- 
-  
+            </p>
+            
 
       	
-         	
-  <h3>Simple image gallery</h3>
-  <p>
-    
-
-    <a class="fancybox" href="/museo/public/img/2_b.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="/museo/public/img/2_s.jpg" alt="" /></a>
-
-    <a class="fancybox" href="/museo/public/img/3_b.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="/museo/public/img/3_s.jpg" alt="" /></a>
-
-    <a class="fancybox" href="/museo/public/img/4_b.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="/museo/public/img/4_s.jpg" alt="" /></a>
-  </p>
+ 
          
         </div>
         
@@ -89,26 +71,7 @@ $(document).ready(function(){
     $('.fancybox').fancybox();
 
 
-      $('.fancybox-buttons').fancybox({
-        openEffect  : 'none',
-        closeEffect : 'none',
-
-        prevEffect : 'none',
-        nextEffect : 'none',
-
-        closeBtn  : false,
-
-        helpers : {
-          title : {
-            type : 'over'
-          },
-          buttons : {}
-        },
-
-        afterLoad : function() {
-          this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
-        }
-      });
+     
 })  
 
 </script>

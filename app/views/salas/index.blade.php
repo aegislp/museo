@@ -4,8 +4,6 @@
    Museo: Salas   
 @stop
 
-
-
 @section('contenido')
 
   @include('nav',array('nav'=> array('home'=>'home','salas'=>'')))
@@ -16,7 +14,7 @@
   	<div class="row">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail salas">
-    	{{HTML::image('assets/img/salas/'.$sala->id.'/thumb.png','salas')}}
+    	{{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas')}}
           <div class="caption">
             <h3>{{$sala->nombre}}</h3>
             <p>{{$sala->descripcion}}</p>
