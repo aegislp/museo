@@ -10,7 +10,10 @@
      
     	}
 		public function getIndex(){
-			return "Index";
+
+
+			$usuarios = User::getSolicitudes();
+			return View::make('administracion.index',array('usuarios'=>$usuarios));
 		}
 
 	}
