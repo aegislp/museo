@@ -56,7 +56,7 @@
 	   <table class="table table-striped">
 	 			<thead>
   	 			<tr>
-  	 				<th>#</th><th>Nombre</th><th>Email</th>
+  	 				<th>#</th><th>Nombre</th><th>Email</th><th></th>
   	 			</tr>
 	 			</thead>
 	 			<tbody>
@@ -66,10 +66,12 @@
 	 					<td>{{$i+1}}</td>
 	 					<td>{{$usuario->usuario}}</td>
 	 					<td>{{$usuario->email}}</td>
+            <td><button type="button" class="btn btn-success btn-sm">Aceptar</button></td>
 	 				</tr>
 	 				@endforeach
 	 			</tbody>
 	 		</table>
+      <a href="{{URL::action('AdministracionController@getUsuarios')}}" class="btn btn-default btn-sm" style="float:right">Ver todas</a>
   	</div>
 </div>
 

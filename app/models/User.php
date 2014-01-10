@@ -49,7 +49,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
-	public static function getSolicitudes(){
-		return DB::table('users')->where('solicitud','=',1)->get();
+	public static function getSolicitudes($limite = null){
+
+		if($limite != null){
+			return DB::table('users')->where('solicitud','=',1)->take($limite)->get();	
+		}else{
+			return DB::table('users')->where('solicitud','=',1)->get();
+		}
+
+		
 	}
 }
