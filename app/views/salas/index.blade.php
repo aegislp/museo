@@ -18,7 +18,7 @@
           <div class="caption">
             <h3>{{$sala->nombre}}</h3>
             <p>{{$sala->descripcion}}</p>
-            
+         
           </div>
         </div>
       </div>

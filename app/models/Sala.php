@@ -14,7 +14,8 @@
 
 		public static function getActivas(){
 
-			return DB::table('salas')->where('activa','=',1)->get();
+			//return DB::table('salas')->where('activa','=',1)->get();
+			return Sala::with('objetos')->where('activa','=',1)->get();
 		}
 	}
 

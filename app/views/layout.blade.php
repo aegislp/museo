@@ -8,7 +8,10 @@
     {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
     @yield('css')
     {{ HTML::script('assets/js/jquery-1.10.1.min.js') }}
+    {{ HTML::script('assets/js/jquery.validate.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/js/jquery.blockUI.js') }}
+    {{ HTML::script('assets/js/funciones.js') }}
    
     @yield('script')
 

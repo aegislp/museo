@@ -45,7 +45,7 @@
               <a class="fancybox" href="/museo/public/{{str_replace('_s','_b',$imagen)}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">{{HTML::image($imagen)}}</a>
             @endforeach
             </p>
-            
+            {{$seleccion->obejetos}}
 
       	
  
