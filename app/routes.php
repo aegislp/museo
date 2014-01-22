@@ -26,5 +26,4 @@ Route::resource('salas','SalasController');
 Route::get('ajax/objetos/{objeto_id}',array('as'=>'ajax_objetos', 'uses'=>'ObjetosController@ajax'));
 Route::resource('objetos','ObjetosController');
 
-
 Route::controller('administracion', 'AdministracionController');

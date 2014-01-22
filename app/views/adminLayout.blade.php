@@ -2,7 +2,7 @@
  
 
 @section('nav')
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -21,16 +21,18 @@
       <li class=""><a href="{{URL::action('AdministracionController@getIndex')}}">Inicio</a></li>
       <li><a href="{{URL::action('AdministracionController@getSalas')}}">Salas</a></li>
       <li><a href="#">Objetos</a></li>
-      <li><a href="#">Secciones</a></li>
+ 
       <li><a href="{{URL::action('AdministracionController@getUsuarios')}}">Usuarios</a></li>
-       
+       <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secciones <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Museo</a></li>
+           
+        </ul>
+      </li> 
     </ul>
-    <form class="navbar-form navbar-right" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Buscar</button>
-    </form>
+   
      
   </div><!-- /.navbar-collapse -->
 

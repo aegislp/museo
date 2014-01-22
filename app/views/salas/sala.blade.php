@@ -3,8 +3,10 @@
 {{HTML::style('assets/fancy/jquery.fancybox.css')}}
 @stop
 @section('contenido')
-   @include('nav',array('nav'=> array('home'=>'home','salas'=>'salas.index',$seleccion->id=>'')))
-<div class="row">
+   @include('nav',array('nav'=> array('home'=>'home','salas'=>'salas.index',$seleccion->nombre=>'')))
+
+
+<div class="row"  style="padding:1em;">
 	 
  
 	<div class="col-md-12">

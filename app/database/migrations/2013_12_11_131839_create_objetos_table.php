@@ -19,8 +19,7 @@ class CreateObjetosTable extends Migration {
 			$table->string('nombre');
 			$table->string('nombre_cientifico');
 			$table->string('descripcion');
-			$table->string('archivo');
-			$table->timestamps();
+		 	$table->timestamps();
 
 		});
 	}

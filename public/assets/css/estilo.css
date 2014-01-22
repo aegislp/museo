@@ -1,17 +1,15 @@
-.navbar a{
-	color:yellow !important;
-	font-weight: bold;
+body{
+    padding-top: 50px;
 }
-.navbar {
-	background-color:#0D8AB8;
-}	
+
+ 
 .col-md-4 {
     width: 100% !important;
 }
 .salas .thumbnail > img {
     display: inline !important;
     float: left;
-    width: 30% !important;
+    width: 32% !important;
   }  
 .salas .thumbnail .caption {
 	width: 68% !important;
@@ -94,18 +92,65 @@
 #select_sala{
 		display: none;
 	}
-@media screen and (max-width:500px){
-	#ul_menu{
-		display: none;
-	}
-	#select_sala{
-		display: block;
-	}
-
-}  
+  
 
 .solicitud{
 
   display: none;
 }
  
+.objeto.thumbnail img{
+    
+   float: left;
+   width: 20% !important;
+   height: auto;
+   margin-right: 1em;
+    
+}
+
+ 
+.objeto.thumbnail{
+ 
+   display: inline-block;
+   padding: 3px;
+}
+
+.objetos.caption{
+
+  width: 80% !important;
+  display: inline-block;
+}
+
+
+
+#baner_museo{
+        display: none;
+        margin-top: 0px;
+        padding-top: 0px;
+     }
+
+
+     #baner_museo img{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+     }     
+
+
+@media   screen and (max-width: 600px) {
+     #carousel-example-captions,#barra_busqueda,#ul_menu,.caption p{
+        display: none;
+     }
+
+     #baner_museo{
+        display: inline-block;
+        width: 100%;
+     }
+     .container.row{
+        margin-top: 0px;
+     }
+   
+    #select_sala{
+      display: block;
+    }
+}

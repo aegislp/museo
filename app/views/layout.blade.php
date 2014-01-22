@@ -3,6 +3,7 @@
   <head>
     <title>@yield('title', 'Aprendiendo Laravel')</title>
    <meta charset="utf8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
     {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
@@ -11,6 +12,8 @@
     {{ HTML::script('assets/js/jquery.validate.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}
     {{ HTML::script('assets/js/jquery.blockUI.js') }}
+    {{ HTML::script('assets/js/tinymce/tinymce.min.js') }}
+    {{ HTML::script('assets/js/jquery.form.js') }}
     {{ HTML::script('assets/js/funciones.js') }}
    
     @yield('script')
@@ -28,7 +31,7 @@
     <div class="container">
 
       <!-- Example row of columns -->
-      <div class="row" style="margin-top:5em;">
+      <div class="row principal" style="margin-top:1em" >
       
 
         @yield('contenido') 

@@ -19,23 +19,8 @@ function fin_mostrar_espera(){
 
 
 
-//-----------------admin salas-----------------------------------//
-function nueva_sala(){
-	$('#myModal').modal('hide')
-	mostrar_espera();
-
-	$.post(
-		'',
-		{form:$('#form_sala').serialize()},
-		function(response){
-			fin_mostrar_espera();
-		}
-	);
-	 
-
-}
-
-
+//-----------------admin objetos-----------------------------------//
+ 
 
 
 
@@ -53,8 +38,12 @@ function cambiar_sala(id_sala){
 }
 $(document).ready(function(){
 
-	//$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
-
+	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
+	tinymce.init({
+    	 
+    	selector: "textarea",
+    	language : 'es',
+ 	});
 
 	$('#select_sala').change(function(){
 		cambiar_sala($('#select_sala').val());
@@ -67,6 +56,18 @@ $(document).ready(function(){
 
 
 	//------------------------ administracion -------------------//
-	$('#btn_nueva_sala').click(nueva_sala);
+	$('#btn_sala_nueva,#cancelar_btn').click(function(){
+		$('#formulario_sala,#tabla_salas').toggle();
+		 
+	});
+	
 	 
+	$('#btn_objeto_nuevo,#btn_cancelar_obj').click(function(){
+		$('#formulario_objeto,.objetos').toggle();
+		 
+	});
+
+ 
+ 
+ 
 })

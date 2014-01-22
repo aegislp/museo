@@ -9,7 +9,7 @@
 	    </div>
 	    <div class="collapse navbar-collapse navbar-ex1-collapse">
 	        <ul class="nav navbar-nav navbar-right">
-	            <li  data-toggle="modal" data-target="#myModal">
+	            <li id="btn_sala_nueva">
 	            	<a   data-toggle="collapse"  href="#colapseone">
 	            		<span class="glyphicon glyphicon-plus"></span>
 			   			Nueva
@@ -19,71 +19,76 @@
 	    </div>
 	   
 	</nav>
-	<table class="table table-striped">
+	  @if ($errors->any())
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Ocurrio un error al grabar la sala:</strong>
+      <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+      </ul>
+    </div>
+  @endif
+	<div id="formulario_sala" style="display:none">
+		{{ Form::model($sala,array(   'method' => 'POST', 'id'=>'form_sala') ) }}
+			 <div class="row">  
+			  <div class="col-lg-2">
+			  	<div class="form-group">
+			    	{{ Form::label('numero', 'Numero de sala') }}
+			    	{{ Form::text('numero', null,array('class' => 'required form-control')) }}
+			    
+			  	</div>
+				</div>
+				<div class="col-lg-10">
+			  <div class="form-group">
+			    {{ Form::label('nombre', 'Nombre') }}
+			    {{ Form::text('nombre', null,array('class' => 'form-control')) }}
+			    
+			  </div>
+				</div>
+			</div>  
+			  <div class="form-group">
+			    {{ Form::label('descripcion', 'Descripcion') }}
+			    {{ Form::textarea('descripcion', null,array('class' => 'form-control','rows'=>6)) }}
+
+			  </div>
+			  <button type="button" class="btn btn-default" id="cancelar_btn">Cancelar</button>
+	    <button type="submit" class="btn btn-primary" >Guardar</button>
+		{{ Form::close() }}
+		
+	</div>
+
+
+	<table class="table table-striped" id="tabla_salas">
 		<thead>
  			<tr>
- 				<th>#</th><th>Nombre</th><th>Objetos</th><th>Visitas</th><th></th>
+ 				<th>#</th><th>Nombre</th><th>Estado</th><th  style="text-align:right">Editar</th><th  style="text-align:right">Objetos</th>
  			</tr>
 		</thead>
 		<tbody>
 			
 			@foreach($salas  as $i => $sala)
 			<tr>
-				<td>{{$sala->id}}</td>
+				<td>{{$sala->numero}}</td>
 				<td>{{$sala->nombre}}</td>
-				<td>{{count($sala->objetos)}}</td>
-				<td></td>
-				<td>{{$sala->activa}}</td>
+				<td>{{$sala->activa()}}</td>
 				<td style="text-align:right">
 
-					<button type="button" class="btn btn-success btn-sm"> 
+					<a type="button" class="btn btn-default btn-sm" href="{{ URL::action('AdministracionController@getEditarSala',$sala->id) }}"> 
 						<span class="glyphicon     glyphicon-cog"></span>
-					</button>
-					<button type="button" class="btn btn-success btn-sm"> 
-						<span class="glyphicon   glyphicon-trash"></span>
-					</button>
+					</a>
+					 
+				</td>
+				<td  style="text-align:right">{{count($sala->objetos)}}
+					<a type="button" class="btn btn-default btn-sm" href="{{ URL::action('AdministracionController@getEditarObjetos',$sala->id) }}"> 
+						<span class="glyphicon     glyphicon-plus"></span>
+					</a>
 				</td>
 			</tr>
 			@endforeach
 	 	</tbody>
 	</table>
 
-
  
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">Nueva Sala</h4>
-	      </div>
-	      <div class="modal-body">
-	       		{{ Form::open(array(  'method' => 'POST', 'id'=>'form_sala') ) }}
-				  <div class="form-group">
-				    {{ Form::label('numero', 'Numero de sala') }}
-				    {{ Form::text('numero', null,array('class' => 'required form-control')) }}
-				    
-				  </div>
-				  <div class="form-group">
-				    {{ Form::label('nombre', 'Nombre') }}
-				    {{ Form::text('nombre', null,array('class' => 'form-control')) }}
-				    
-				  </div>
-				  <div class="form-group">
-				    {{ Form::label('descripcion', 'Descripcion') }}
-				    {{ Form::textarea('nombre', null,array('class' => 'form-control','rows'=>3)) }}
-
-				  </div>
-				  
-				  
-				 {{ Form::close() }}
-
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-	        <button type="button" class="btn btn-primary" id="btn_nueva_sala">Guardar</button>
-	      </div>
-	    </div> 
-	  </div> 
-	</div> 
 @stop
