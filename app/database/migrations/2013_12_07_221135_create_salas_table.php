@@ -16,7 +16,7 @@ class CreateSalasTable extends Migration {
 			
 			$table->integer('numero')->unique();
 			$table->string('nombre');
-			$table->text('descripcion');
+			$table->longText('descripcion');
 			$table->boolean('activa');
 			
  			$table->timestamps();

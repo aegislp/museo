@@ -17,13 +17,14 @@ Route::get('/',array( 'as'=>'home',function()
 }));
 
 //salas
-Route::post('salas/ajax','SalasController@postAjax');
-Route::get('salas/{sala}/objetos','SalasController@objetos');
-Route::resource('salas','SalasController');
-
+//Route::post('salas/ajax','SalasController@postAjax');
+//Route::get('salas/{sala}/objetos','SalasController@objetos');
+ 
+Route::controller('salas','SalasController');
 
 //objetos
 Route::get('ajax/objetos/{objeto_id}',array('as'=>'ajax_objetos', 'uses'=>'ObjetosController@ajax'));
 Route::resource('objetos','ObjetosController');
 
-Route::controller('administracion', 'AdministracionController');
+Route::controller('admin/general', 'AdministracionController');
+Route::controller('admin/salas', 'AdminSalasController');

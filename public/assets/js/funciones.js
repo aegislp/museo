@@ -17,14 +17,7 @@ function fin_mostrar_espera(){
     $.unblockUI();
 }
 
-
-
-//-----------------admin objetos-----------------------------------//
  
-
-
-
-//--------------------------------------------------------------//
 
 function cambiar_sala(id_sala){
 	$.post(
@@ -36,14 +29,22 @@ function cambiar_sala(id_sala){
 	)
  
 }
+
+function ver_trivia(event){
+
+	$.get(
+		$(event.currentTarget).attr('rel') ,
+		function(response){
+			$('#juegos').empty().append(response);
+			$('#modal_juego').modal('show');
+		}
+
+	)
+}
 $(document).ready(function(){
 
 	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
-	tinymce.init({
-    	 
-    	selector: "textarea",
-    	language : 'es',
- 	});
+	
 
 	$('#select_sala').change(function(){
 		cambiar_sala($('#select_sala').val());
@@ -55,19 +56,5 @@ $(document).ready(function(){
 	})
 
 
-	//------------------------ administracion -------------------//
-	$('#btn_sala_nueva,#cancelar_btn').click(function(){
-		$('#formulario_sala,#tabla_salas').toggle();
-		 
-	});
-	
-	 
-	$('#btn_objeto_nuevo,#btn_cancelar_obj').click(function(){
-		$('#formulario_objeto,.objetos').toggle();
-		 
-	});
-
- 
- 
- 
+	$('.btn-trivia').click(ver_trivia) 
 })

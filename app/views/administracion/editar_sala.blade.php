@@ -1,50 +1,91 @@
 @extends('adminLayout')
 @section('contenido')
 
-<nav class="navbar navbar-default" role="navigation">
-	    <div class="navbar-header">
-	        <a class="navbar-brand" href="#">
-	        	<span class="glyphicon glyphicon-wrench"></span>
-				Datos de la sala
-			</a>
-	    </div>
-	       <ul class="nav navbar-nav navbar-right">
-	            <li id="btn_sala_nueva">
-	            	<a   data-toggle="collapse"  href="#colapseone">
-	            		<span class="glyphicon glyphicon-floppy-disk"></span>
-			   			Guardar
-			   		</a>
-			   	</li>
-	        </ul>
-	   
-	</nav>
-	<div id="formulario_sala"  >
-		{{ Form::model($sala,array(   'method' => 'POST', 'id'=>'form_sala') ) }}
-			 <div class="row">  
-			  <div class="col-lg-2">
-			  	<div class="form-group">
-			    	{{ Form::label('numero', 'Numero de sala') }}
-			    	{{ Form::text('numero', null,array('class' => 'required form-control')) }}
-			    
-			  	</div>
-				</div>
-				<div class="col-lg-10">
-			  <div class="form-group">
-			    {{ Form::label('nombre', 'Nombre') }}
-			    {{ Form::text('nombre', null,array('class' => 'form-control')) }}
-			    
-			  </div>
-				</div>
-			</div>  
-			  <div class="form-group">
-			    {{ Form::label('descripcion', 'Descripcion') }}
-			    {{ Form::textarea('descripcion', null,array('class' => 'form-control','rows'=>6)) }}
+<nav class="navbar navbar-default barra" role="navigation">
+	<h4 style="display:inline-block"><span class="glyphicon glyphicon-home"></span>  Datos de la sala</h4>
+	<button  class="btn btn-default btn-sm navbar-btn" type="submit">
+		<span class="glyphicon glyphicon-floppy-disk"></span>
+		Guardar todo
+	</button>
+</nav>
+	  @if ($errors->any())
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Ocurrio un error al grabar la sala:</strong>
+      <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+      </ul>
+    </div>
+  @endif 
 
-			  </div>
-	 
-		{{ Form::close() }}
-		
+{{ Form::model($sala,array( 'method' => 'POST', 'id'=>'form_sala','files'=>true) ) }}
+ 	{{Form::hidden('id_sala',$sala->id,array('id' => 'id_sala'))}}
+	<div class="form-group">
+		{{ Form::label('numero', 'Numero de sala') }}
+		{{ Form::text('numero', null,array('class' => 'required form-control')) }}
 	</div>
-	 
+	<div class="form-group">
+		{{ Form::label('nombre', 'Nombre') }}
+		{{ Form::text('nombre', null,array('class' => 'form-control')) }}
+	</div>
+ 	<div class="form-group2">
+		{{ Form::label('descripcion', 'Descripcion') }}
+		{{ Form::textarea('descripcion', null,array('class' => 'form-control','rows'=>6)) }}
+	</div>
+ 	
+ 	<div id="fotos_salas" style>
+	
+	</div>
+	<br>
+
+<nav class="navbar navbar-default barra" role="navigation">
+	<h4 style="display:inline-block"><span class="glyphicon glyphicon-picture"></span>  Galeria</h4>
+	<button    type="button" id="btn_add_foto_sala" class="btn btn-default btn-sm navbar-btn">
+		<span class="glyphicon glyphicon-plus"></span>
+		Agregar
+	</button>
+</nav>
+
+
+<div id="thumbnails"  >
+@foreach( File::glob('assets/img/salas/'.$sala->id.'/galeria/*_s.jpg')  as $imagen)
+	
+	    <div class="thumbnail" id="{{ str_replace('.','',basename($imagen)) }}">
+	      
+	      <div class="caption">
+	      	<button aria-hidden="true"  class="close" type="button" rel="{{URL::action('AdminSalasController@postEliminarImagenSala').'/'.str_replace('assets/img/salas/'.$sala->id.'/galeria/','',$imagen)}}">×</button>
+		    <a class="fancybox" href=" {{asset(str_replace('_s','_b',$imagen))}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
+	        	{{HTML::image($imagen)}}
+	        </a>
+	      </div>
+	    </div>
+	
+@endforeach	 
+</div>
+
  
+
+
+<nav class="navbar navbar-default barra" role="navigation">
+	 
+	<button  type="submit"  class="btn btn-default btn-sm navbar-btn">
+		<span class="glyphicon glyphicon-floppy-disk"></span>
+		Guardar todo
+	</button>
+</nav>
+ {{ Form::close() }} 
+
+
+
+<div class="alert alert-warning alert-dismissable" id="alert_borrado" style="display:none">
+  
+  <strong>Atencion!</strong>  
+  <p>¿Quiere eliminar la imagen de la galeria ?</p> 
+  <input type="hidden" id="parametro_sala" value=""> 
+  <button class="btn" id="btn_aceptar_borrado">Aceptar</button>
+  <button class="btn btn-primary" id="btn_cancelar_borrado">Cancelar</button>
+</div>
+
 @stop	

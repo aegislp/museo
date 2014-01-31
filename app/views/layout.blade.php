@@ -5,7 +5,9 @@
    <meta charset="utf8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+    
     {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
+    {{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen')) }}
     {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
     @yield('css')
     {{ HTML::script('assets/js/jquery-1.10.1.min.js') }}
@@ -13,7 +15,7 @@
     {{ HTML::script('assets/js/bootstrap.min.js') }}
     {{ HTML::script('assets/js/jquery.blockUI.js') }}
     {{ HTML::script('assets/js/tinymce/tinymce.min.js') }}
-    {{ HTML::script('assets/js/jquery.form.js') }}
+    {{ HTML::script('assets/fancy/jquery.fancybox.js')}}
     {{ HTML::script('assets/js/funciones.js') }}
    
     @yield('script')

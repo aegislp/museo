@@ -22,46 +22,11 @@
 			return View::make('administracion.usuarios',array('usuarios'=>$usuarios,'solicitudes'=>$solicitudes));
 		}
 
-		public function getSalas(){
-			$salas = Sala::all();
+		/*------------------------------------  administracion de salas -------------------------------------*/
+		
+	/*------------------------------------------------------------------------------------------------------*/	
 
-			$sala = new Sala;
-			return View::make('administracion.salas',array('salas'=>$salas,'sala'=>$sala));
-		}
-		public function postSalas(){
-			$errores = null;
-			try {
-				
-				$sala = new Sala;
-			 	if($sala->isValid(Input::all())){
-
-					$sala->fill(Input::all());
-					$sala->save();				
-				}else{
-					throw new Exception( "Error campos no validos", 700);
-					
-				}
-
-			} catch (Exception $e) {
-
-				if($e->getCode() == 700){
-					$errores = $sala->errors;	
-				}else{
-					$errores =  array('error'=>'Error al grabar la sala '.$e);
-				}
-				
- 
-
-
-			}
-			
-			 return Redirect::action('AdministracionController@getSalas')->withInput()->withErrors($errores);
-		}
-		public function getEditarSala($sala){
-
-			$sala  = Sala::findOrFail($sala);
-			return View::make('administracion.editar_sala',array('sala'=>$sala));
-		}
+	 	
 		public function getEditarObjetos($sala){
 
 			$sala  = Sala::findOrFail($sala);

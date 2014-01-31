@@ -10,7 +10,7 @@
 
  <div class="salas">
 	@foreach ($salas as $sala)
-  <a href="{{ URL::route('salas.show',$sala->id) }}">
+  <a href="{{ URL::action('SalasController@getShow',$sala->id) }}">
   	<div class="row">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail salas">

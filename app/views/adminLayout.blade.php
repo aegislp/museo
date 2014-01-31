@@ -1,5 +1,7 @@
 @extends('layout')
- 
+@section('script')
+  {{HTML::script('assets/js/administracion.js')}}
+@stop
 
 @section('nav')
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -19,7 +21,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class=""><a href="{{URL::action('AdministracionController@getIndex')}}">Inicio</a></li>
-      <li><a href="{{URL::action('AdministracionController@getSalas')}}">Salas</a></li>
+      <li><a href="{{URL::action('AdminSalasController@getIndex')}}">Salas</a></li>
       <li><a href="#">Objetos</a></li>
  
       <li><a href="{{URL::action('AdministracionController@getUsuarios')}}">Usuarios</a></li>

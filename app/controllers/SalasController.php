@@ -1,46 +1,32 @@
 <?php
 
-class SalasController extends \BaseController {
+class SalasController extends BaseController {
 
-	public function index()
+	public function getIndex()
 	{
 		$salas = Sala::getActivas();
-
-		return View::make('salas.index',array('salas' => $salas ));
+		return View::make('salas.index',array('salas' => $salas )); 
 	}
 
- 
-	public function objetos($sala){
-		$sala = Sala::find($sala);
-		
-		if(is_null($sala)){
-			App::abort(404,'Sala no encontrada');
-		}
-
-		 
-
+ 	public function getObjetos($sala){
+		$sala = Sala::findOrFail($sala);
 		return View::make('salas.objetos',array('sala'=>$sala ));
-
 	}
-
-	 
-	public function show($id)
+	public function getShow($id)
 	{
-		$sala =Sala::find($id);
+		$sala =Sala::findOrFail($id);
 
-		if(is_null($sala)){
-			App::abort(404,'Sala no encontrada');
-		}
-
-		$salas =Sala::getActivas();
+	 	$salas =Sala::getActivas();
 		return View::make('salas.sala',array('salas'=>$salas,'seleccion'=>$sala));
 	}
-
-	 
 	public function postAjax(){
 
 		$sala = Sala::find(Input::get('sala'));
 		return View::make('salas.detalle',array('seleccion'=>$sala));
 	} 
-
+	public function  getTrivia($sala_id){
+		$trivia = Sala::findOrFail($sala_id)->trivias->first();
+		 
+		return View::make('salas.trivia',array('trivia'=>$trivia));
+	}
 }

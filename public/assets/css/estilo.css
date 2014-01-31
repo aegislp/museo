@@ -2,7 +2,9 @@ body{
     padding-top: 50px;
 }
 
- 
+.thumbnail{
+  display: inline-block;
+} 
 .col-md-4 {
     width: 100% !important;
 }
@@ -153,4 +155,25 @@ body{
     #select_sala{
       display: block;
     }
+}
+.barra{
+
+  padding: 3px !important;
+}
+.barra button{
+  float:right !important;
+}
+.barra h4{
+  display:inline-block;
+  color: #777777;
+  margin-left: 1em;
+}
+/*-------------------------------Administracion -------------------------*/
+#tabla_salas button{
+
+    width: 7em !important;
+}
+
+i{
+  font-size: 18px;
 }

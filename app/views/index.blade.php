@@ -6,7 +6,7 @@
    <div id="baner_museo">
             {{HTML::image('assets/img/banner.jpg','Museo')}}
       </div>
-<a   style="text-decoration:none; color:#333;" href="{{ URL::action('SalasController@index')}}">     
+<a   style="text-decoration:none; color:#333;" href="{{ URL::action('SalasController@getIndex')}}">     
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
