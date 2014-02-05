@@ -25,6 +25,10 @@ function eliminarTrivia(event){
 	$('#form_trivia').submit();
 }
 
+function eliminarObjeto(event){
+	document.location = $(event.currentTarget).attr('rel');
+}
+
 $(document).ready(function(){
 
 	tinymce.init({
@@ -71,5 +75,18 @@ $(document).ready(function(){
  		);
  	})
  	$('.btn-trivia').click(eliminarTrivia);
+ 	$('.btn_eliminar_obj').click(function(event){
+ 		$('#objeto').val($(event.currentTarget).attr('rel'));
+ 	 
+ 		$.blockUI({'message':$('#alert_eliminar_obj')});
+
+ 	});
+	$('#btn_cambiar_portada').click(function(){
+
+		alert("cambiar portada") ;
+		$(this).parent().parent().remove();
+		$('input[name="portada_h"]').parent().css('display','block');
+		$('input[name="portada_h"]').attr('name','portada');
+	});
 
 });

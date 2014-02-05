@@ -87,7 +87,16 @@
 	        <div class="thumbnail objeto">
 	    	{{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas')}}
 	          <div class="caption">
-	            <h3>{{$objeto->nombre}}</h3>
+	            <h3>{{$objeto->nombre}}</h3> 
+	            <div class="btn-group" style="float:right">
+    				<button type="button" class="btn btn-default"> 
+    					<span class="glyphicon glyphicon-trash"></span>   
+    				</button>
+    				<button type="button" class="btn-trivia btn btn-default">
+      					<span class="glyphicon glyphicon-pencil"></span>
+    				</button>
+     			</div>
+
 	            <p>{{$objeto->descripcion}}</p>
 	         
 	          </div>

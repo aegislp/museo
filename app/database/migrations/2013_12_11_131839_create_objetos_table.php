@@ -18,7 +18,8 @@ class CreateObjetosTable extends Migration {
 			$table->integer('categoria_id');
 			$table->string('nombre');
 			$table->string('nombre_cientifico');
-			$table->string('descripcion');
+			$table->text('descripcion');
+			$table->integer('votos')->unsigned()->default(0);
 		 	$table->timestamps();
 
 		});

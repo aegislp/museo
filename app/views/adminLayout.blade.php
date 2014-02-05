@@ -22,7 +22,7 @@
     <ul class="nav navbar-nav">
       <li class=""><a href="{{URL::action('AdministracionController@getIndex')}}">Inicio</a></li>
       <li><a href="{{URL::action('AdminSalasController@getIndex')}}">Salas</a></li>
-      <li><a href="#">Objetos</a></li>
+    
  
       <li><a href="{{URL::action('AdministracionController@getUsuarios')}}">Usuarios</a></li>
        <li class="dropdown">

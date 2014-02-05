@@ -5,16 +5,26 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">{{$trivia->pregunta}}</h4>
       </div>
-      <div class="modal-body">
-        <p>{{$trivia->opcion1}}</p>
-        <p>{{$trivia->opcion2}}</p>
-        <p>{{$trivia->opcion3}}</p>
+      <div class="modal-body" id="body-trivia">
+          <button type="button" class="btn btn-primary btn-lg btn-block">{{$trivia->opcion1}}
+          
+          </button>
+          <button type="button" class="btn btn-default btn-lg btn-block">{{$trivia->opcion2}}
+              
+          </button>
+          <button type="button" class="btn btn-default btn-lg btn-block">{{$trivia->opcion3}}
+             
+          </button>
+    
+          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
  
+
+

@@ -1,3 +1,14 @@
+function juego_objetos(event){
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			$('#juegos').empty().append(response);
+			$('#modal_juego').modal('show');
+		}
+
+	)
+
+}
 //ventana de espera
 function mostrar_espera()
 {		
@@ -41,6 +52,17 @@ function ver_trivia(event){
 
 	)
 }
+
+function info_objetos(event){
+
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			$('#detalle_objeto').empty().append(response);
+			$('#modal_detalle_objeto').modal('show')
+		}
+	)
+}
 $(document).ready(function(){
 
 	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
@@ -57,4 +79,6 @@ $(document).ready(function(){
 
 
 	$('.btn-trivia').click(ver_trivia) 
+	$('.btn-juego').click(juego_objetos) 
+	$('.btn_objetos').click(info_objetos) 
 })

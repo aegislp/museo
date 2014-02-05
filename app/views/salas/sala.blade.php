@@ -32,11 +32,15 @@
             <div class="heder_sala">
               <h1> {{$seleccion->nombre}}</h1>
               <div class="btn-group" style="float:right">
-                <button type="button" class="btn btn-default"> <i class="fa fa-bars"></i> Objetos</button>
+                <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}" type="button" class="btn btn-default"> 
+                  <i class="fa fa-bars"></i> Objetos
+                </a>
                 <button type="button" class="btn-trivia btn btn-default" rel="{{URL::action('SalasController@getTrivia',$seleccion->id)}}">
                   <i class="fa fa-question"></i> Trivia
                 </button>
-                <button type="button" class="btn btn-default"><i class="fa fa-gamepad"></i> Juegos</button>
+                <button  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" type="button" class="btn-juego btn btn-default">
+                  <i class="fa fa-gamepad"></i> Juegos
+                </button>
                 <button type="button" class="btn btn-default"> <i class="fa fa-thumbs-o-up"></i> like</button>
               </div>
               
@@ -61,7 +65,9 @@
 	</div>
 
 </div>
-<div id="juegos"></div>
+<div id="juegos">
+
+</div>
  
 
 @stop

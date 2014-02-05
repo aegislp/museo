@@ -2,91 +2,30 @@
 
 class ObjetosController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function ajax($objeto_id)
+ 
+	public function getDetalle($objeto_id)
 	{
 		$objeto = Objeto::find($objeto_id);
-		return View::make('objetos.preview',array('objeto'=>$objeto));
+		return View::make('objetos.detalle',array('objeto'=>$objeto));
 	}
-
-	public function index()
+ 
+	public function getIndex()
 	{
-		//
+
+		$destacados  = Objeto::where('votos','>',0)->orderBy('votos')->take(10)->get();
+
+		return View::make('objetos.index',array('destacados'=>$destacados));	
+
 	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+	public function postIndex()
 	{
-		//
-	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+		$objeto = Objeto::find(Input::get('codigo')); 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$objeto = Objeto::find($id);
-
-		if(is_null($objeto)){
-			return App::abort(404,'Objeto no encontrado');
+		if(!$objeto){
+			return Redirect::action('ObjetosController@getIndex')->withErrors(array(0=>Input::get('codigo')));
 		}
-
-		return View::make('objetos.show',array('objeto'=>$objeto));
+			
 
 	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
-}
+ }

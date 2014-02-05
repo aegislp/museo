@@ -29,4 +29,15 @@ class SalasController extends BaseController {
 		 
 		return View::make('salas.trivia',array('trivia'=>$trivia));
 	}
+	public function getBuscarObjeto($sala_id){
+		$objeto = Objeto::getObjetoAzar($sala_id);
+		return View::make('salas.juego',array('objeto'=>$objeto));
+	}
+	public function getMeGusta($sala_id){
+		$sala = Sala::findOrFail($sala_id);
+		$sala->punto = $sala->punto + 1;
+		$sala->save();
+
+		
+	}  
 }

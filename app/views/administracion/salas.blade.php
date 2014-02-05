@@ -35,7 +35,7 @@
 				<td>{{$sala->numero}}</td>
 				<td>{{$sala->nombre}}</td>
 				<td >
-					<a type="button" class="btn btn-default btn-sm" href="{{URL::action('AdministracionController@getEditarObjetos',$sala->id)}}">
+					<a type="button" class="btn btn-default btn-sm" href="{{URL::route('admin_objetos',$sala->id)}}">
 					
 						{{count($sala->objetos)}}
 					</a>
