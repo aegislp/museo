@@ -31,7 +31,7 @@
           <div class="tab-pane active" id="contenedor_sala">
             <div class="heder_sala">
               <h1> {{$seleccion->nombre}}</h1>
-              <div class="btn-group" style="float:right">
+              <div class="btn-salas btn-group" style="float:right">
                 <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}" type="button" class="btn btn-default"> 
                   <i class="fa fa-bars"></i> Objetos
                 </a>

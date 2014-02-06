@@ -7,24 +7,21 @@
 @section('contenido')
 
   @include('nav',array('nav'=> array('home'=>'home','salas'=>'')))
-
- <div class="salas">
-	@foreach ($salas as $sala)
-  <a href="{{ URL::action('SalasController@getShow',$sala->id) }}">
-  	<div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail salas">
-    	{{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas')}}
-          <div class="caption">
-            <h3>{{$sala->nombre}}</h3>
-            <p>{{$sala->descripcion}}</p>
+<div class="container salas">
+  @foreach ($salas as $sala)    
+    
+       <a class="col-lg-12" href="{{ URL::action('SalasController@getShow',$sala->id) }}">
          
-          </div>
-        </div>
-      </div>
-  </div>
-</a>
-	@endforeach
+        {{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas',array('class'=>'img-rounded'))}}
+        <h3>{{$sala->nombre}}</h3>
+        <p>{{$sala->descripcion}}</p>
+        <p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+      </a> 
+      <br>
+      <hr>
+  @endforeach
+ 
+ 
 </div>
 @stop
 

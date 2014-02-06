@@ -9,7 +9,7 @@
 			Sala::create( array(
 				'numero' => 1 , 
 				'nombre' => 'Sala esqueletos' , 
-				'descripcion' => 'Descripcion para la sala 1',
+				'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, corporis, dolores quidem qui in molestias modi inventore itaque excepturi eaque perferendis illo reprehenderit ratione possimus impedit repellendus tempore blanditiis accusantium.',
 				'activa' => true
 
 			));
@@ -17,7 +17,7 @@
 			Sala::create( array(
 				'numero' => 2 , 
 				'nombre' => "Sala egipcia", 
-				'descripcion' => 'Esta es la direccion de la tabla dos pero no se que onda',
+				'descripcion' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, blanditiis, cupiditate, a dolore suscipit praesentium quia molestiae sint libero accusamus mollitia dolorum similique unde rem odio reprehenderit voluptate nihil minima.",
 				'activa' => true
 
 		));

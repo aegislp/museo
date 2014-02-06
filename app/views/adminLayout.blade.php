@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('base')
 @section('script')
   {{HTML::script('assets/js/administracion.js')}}
 @stop

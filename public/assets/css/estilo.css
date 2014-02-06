@@ -1,7 +1,155 @@
+
 body{
     padding-top: 50px;
+    background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
- 
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h3 {
+  color: #95a5a6;
+  font-weight: 400;
+}
+
+h4 {
+  color: #95a5a6;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar-default {
+  background-color: #3498db;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+/* Helpers */
+
+.mt {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-control {
+  height: 42px;
+  font-size: 18px;
+  width: 280px;
+}
+
+i {
+  margin: 8px;
+  color: #3498db; 
+}
+
+
+/* HeaderWrap */
+#headerwrap {
+  /* background: url(../img/bg01.jpg) no-repeat center top; */
+  background-color: #3498db;
+  margin-top: -20px;
+   background-attachment: relative;
+  background-position: center center;
+  min-height: 650px;
+  width: 100%;
+  
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 45px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+
+/*-------------bootstrap ---------*/
+ .thumbnail > img, .thumbnail a > img {
+   
+    width: 100%;
+}
+
 .bs-callout {
     border-left: 3px solid #EEEEEE;
     margin: 20px 0;
@@ -51,18 +199,28 @@ body{
     width: 60px;
 }
 
-/*------------------------------------------------------------------------*/
-.thumbnail{
-  display: inline-block;
+/*-------------------  salas -----------------------------------------------------*/
+ 
+.btn-salas a, 
+.btn-salas button {
+  padding:5px 7px 5px 7px;
 } 
-.col-md-4 {
-    width: 100% !important;
+.btn-salas i{
+    margin: 0px;
+    padding: 0px;
 }
-.salas .thumbnail > img {
+.salas img {
     display: inline !important;
     float: left;
     width: 32% !important;
-  }  
+    margin-right: 1em;
+}  
+.salas a{
+  margin-bottom: 1em;
+  border-bottom: 1px solid #CCCCCC;
+  padding:1em;
+}
+
 .salas .thumbnail .caption {
 	width: 68% !important;
 	float: left;
@@ -209,6 +367,14 @@ body{
     #span_busqueda{
       display: none;
     }
+
+    .salas img {
+      display: block !important;
+    
+     width: 95% !important;
+     margin-bottom: 1em ;
+     
+    } 
 }
 .barra{
 
@@ -221,6 +387,10 @@ body{
   display:inline-block;
   color: #777777;
   margin-left: 1em;
+}
+
+.img-circle-sala{
+
 }
 /*-------------------------------Administracion -------------------------*/
 #tabla_salas button{
@@ -250,12 +420,29 @@ i{
 #body-trivia button span{
   float: right;
 }
-.modal-dialog{
-   margin-top: 12%;
-}
+ 
 
 #body-objeto img{
    display: inline-block;
    width: 90%;
    height: auto;
+}
+.heder_sala h1{
+  display: inline-block !important;
+}
+/*------------------------- login -------------------------*/
+#form-login input{
+    margin-bottom: 1em;
+}
+#form-login button{
+    margin-bottom: 1em;
+}
+ 
+#form-login-registro{
+  color:#FFFFFF !important;
+ 
+}
+#form-login-registro a{
+  color:#FFFFFF !important;
+  font-weight: bold !important;
 }

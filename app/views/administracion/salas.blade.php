@@ -55,7 +55,7 @@
 				<td style="text-align:right">
 
 					<a type="button" class="btn btn-default btn-sm" href="{{ URL::action('AdminSalasController@getEditar',$sala->id) }}"> 
-						<span class="glyphicon     glyphicon-cog"></span>
+						<span class="glyphicon     glyphicon-edit"></span>
 					</a>
 					 
 				</td>

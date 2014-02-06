@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'Aprendiendo Laravel')</title>
+    <title>@yield('title','Museo - La Plata')</title>
    <meta charset="utf8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     
-    {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
+    {{ HTML::style('assets/css/bootstrap.css', array('media' => 'screen')) }}
     {{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen')) }}
     {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
     @yield('css')
@@ -30,22 +30,19 @@
      
     @yield('nav')
 
-    <div class="container">
-
-      <!-- Example row of columns -->
-      <div class="row principal" style="margin-top:1em" >
-      
+     
+    
 
         @yield('contenido') 
          
-      </div>
+      
 
       <hr>
 
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
-    </div> <!-- /container -->
+     
    
     
   </body>
