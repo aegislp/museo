@@ -10,13 +10,13 @@ class AdminSalasController extends BaseController {
 	}
 	public function getIndex(){
 		
-		return View::make('administracion.salas',array('salas'=>Sala::all()));
+		return View::make('administracion.salas.index',array('salas'=>Sala::all()));
 	}
 
 	public function getEditar($sala_id = null ){
 
 		$sala  = Sala::firstOrNew( array('id'=>$sala_id));
-		return View::make('administracion.editar_sala',array('sala'=>$sala));
+		return View::make('administracion.salas.editar',array('sala'=>$sala));
 	}
 	
 	public function postEditar($sala = null ){

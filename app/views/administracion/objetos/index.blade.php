@@ -1,4 +1,15 @@
 @extends('adminLayout')
+
+@section('titulo_admin')
+	Objetos <small> crear y eliminar objetos para la sala {{$sala->nombre}}</small>
+@stop
+
+@section('navegacion')
+	<li><a href="index.html"><i class="fa fa-cog"></i> Panel</a></li>
+    <li class="active"><i class="fa fa-table"></i> Salas</li>
+    <li class="active"><i class="fa fa-table"></i> Objetos</li>
+@stop
+
 @section('contenido')
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -47,33 +58,32 @@
     </div>
   @endif 
 	 
-<div class="objetos">
-	@foreach ($sala->objetos as $objeto)
-	  	<div class="row">
-	      <div class="col-sm-6 col-md-4">
-	        <div class="thumbnail objeto">
-	    	{{HTML::image('assets/img/salas/'.$sala->id.'/objetos/'.$objeto->id.'_s.jpg','salas')}}
-	          <div class="caption">
-	            <h3 style="display:inline-block">{{$objeto->nombre}}</h3> 
-	            <div class="btn-group" style="float:right">
-    				<button type="button" class="btn_eliminar_obj btn btn-default" rel="{{$objeto->id}}"> 
-    					<span class="glyphicon glyphicon-trash"></span>   
-    				</button>
-      				<a type="button" class="btn btn-default" href="{{URL::action('AdminObjetosController@getEditar',$objeto->id)}}"> 
-    				
-      					<span class="glyphicon glyphicon-pencil"></span>
-    				</a>
-     			</div>
+ 
+@foreach ($sala->objetos as $objeto)
+  
+       
+<div class="thumbnail objeto">
+{{HTML::image('assets/img/salas/'.$sala->id.'/objetos/'.$objeto->id.'_s.jpg','salas')}}
+  <div class="caption">
+    <h3 style="display:inline-block">{{$objeto->nombre}}</h3> 
+    <div class="btn-group" style="float:right">
+		<button type="button" class="btn_eliminar_obj btn btn-default" rel="{{$objeto->id}}"> 
+			<span class="glyphicon glyphicon-trash"></span>   
+		</button>
+			<a type="button" class="btn btn-default" href="{{URL::action('AdminObjetosController@getEditar',$objeto->id)}}"> 
+		
+				<span class="glyphicon glyphicon-pencil"></span>
+		</a>
+		</div>
 
-	            <p>{{$objeto->descripcion}}</p>
-	         
-	          </div>
-	        </div>
-	      </div>
-	  </div>
-
-	@endforeach
+    <p>{{$objeto->descripcion}}</p>
+ 
+  </div>
 </div>
+       
+
+@endforeach
+ 
 
 
 <div class="bs-callout bs-callout-warning  alert-dismissable" id="alert_eliminar_obj" style="display:none">

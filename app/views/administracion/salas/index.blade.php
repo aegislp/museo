@@ -1,5 +1,17 @@
 @extends('adminLayout')
+
+@section('titulo_admin')
+	Salas <small> cree y administre salas</small>
+@stop
+
+@section('navegacion')
+	<li><a href="index.html"><i class="fa fa-cog"></i> Panel</a></li>
+    <li class="active"><i class="fa fa-table"></i> Salas</li>
+@stop
+
+
 @section('contenido')
+ 
 	<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">
 	        <a class="navbar-brand" href="#">
@@ -64,5 +76,5 @@
 	 	</tbody>
 	</table>
 
- 
+ </div>
 @stop

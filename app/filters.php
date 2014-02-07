@@ -41,9 +41,14 @@ Route::filter('auth', function()
 
 Route::filter('auth.basic', function()
 {
-	return Auth::basic('usuario');
+
+	return Auth::basic('usuario') ;
 });
 
+Route::filter('administrador', function()
+{
+	 
+});
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

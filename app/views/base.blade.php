@@ -1,6 +1,6 @@
 @extends('layout')
  
-@section('nav')
+ 
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -13,7 +13,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class=""><a href="{{URL::route('home')}}">Home</a></li>
+                <li class=""><a href="{{URL::route('home')}}">Inicio</a></li>
                 <li><a href="{{ URL::action('SalasController@getIndex')}}">Salas</a></li>
                 <li><a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a></li>
                 <li><a href="#">Recorrido</a></li>
@@ -38,9 +38,6 @@
 </div>
 
  
-    
-@stop
-
-@section('contenido')
+@yield('contenido')
  
-@stop
+ 

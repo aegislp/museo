@@ -145,6 +145,9 @@ i {
 
 
 /*-------------bootstrap ---------*/
+.breadcrumb{
+  background-color:#FFF !important; 
+}
  .thumbnail > img, .thumbnail a > img {
    
     width: 100%;

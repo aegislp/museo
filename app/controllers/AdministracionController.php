@@ -6,25 +6,23 @@
 
 		public function __construct(){
         	
-        	$this->beforeFilter('auth.basic'); 
+         
+        	$this->beforeFilter('administrador'); 
      
     	}
 		public function getIndex(){
 
-			$usuarios = User::getSolicitudes(5);
-			return View::make('administracion.index',array('usuarios'=>$usuarios));
+			 
+			return View::make('administracion.index') ;
 		}
 
 		public function getUsuarios(){
 
 			$usuarios = User::getUsuarios();
-			$solicitudes = User::getSolicitudes();
-			return View::make('administracion.usuarios',array('usuarios'=>$usuarios,'solicitudes'=>$solicitudes));
+			 
+			return View::make('administracion.usuarios',array('usuarios'=>$usuarios ));
 		}
-
-		/*------------------------------------  administracion de salas -------------------------------------*/
-		
-	/*------------------------------------------------------------------------------------------------------*/	
+ 
 
 	 	
 		

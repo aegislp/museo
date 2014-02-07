@@ -89,4 +89,8 @@ $(document).ready(function(){
 		$('input[name="portada_h"]').attr('name','portada');
 	});
 
+
+	
+    
+
 });
