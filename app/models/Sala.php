@@ -37,6 +37,9 @@
          	
          	return $validator->passes();
 		}
+		public static function cantidad(){
+			return DB::table('salas')->count();
+		}
 	}
 
 ?>	

@@ -26,12 +26,12 @@
                     <i class="fa fa-user fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">456</p>
+                    <p class="announcement-heading">{{$cant_usuarios}}</p>
                     <p class="announcement-text">Usuarios!</p>
                   </div>
                 </div>
               </div>
-              <a href="#">
+              <a href="{{ URL::action('AdministracionController@getUsuarios')}}">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
@@ -53,12 +53,12 @@
                     <i class="fa fa-home fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">12</p>
+                    <p class="announcement-heading">{{$cant_salas}}</p>
                     <p class="announcement-text">Salas</p>
                   </div>
                 </div>
               </div>
-              <a href="#">
+              <a href="{{URL::action('AdminSalasController@getIndex')}}">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
@@ -80,12 +80,12 @@
                     <i class="fa fa-tasks fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">18</p>
+                    <p class="announcement-heading">{{$cant_objetos}}</p>
                     <p class="announcement-text">Objetos</p>
                   </div>
                 </div>
               </div>
-              <a href="#">
+              <a href="{{URL::action('AdminSalasController@getIndex')}}">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
@@ -107,12 +107,12 @@
                     <i class="fa fa-comments fa-5x" style="color:#FFF"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">56</p>
+                    <p class="announcement-heading">{{$cant_mensajes}}</p>
                     <p class="announcement-text">Nuevos Cometarios!</p>
                   </div>
                 </div>
               </div>
-              <a href="#">
+              <a href="{{URL::action('AdministracionController@getMensajes')}}">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">

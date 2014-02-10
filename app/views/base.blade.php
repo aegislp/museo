@@ -18,6 +18,7 @@
                 <li><a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a></li>
                 <li><a href="#">Recorrido</a></li>
                 <li><a href="#">El Museo</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
             @if(Auth::check()) 
             <ul class="nav navbar-nav navbar-right">

@@ -22,6 +22,7 @@ Route::get('logout','UsersController@logout');
 
 Route::controller('salas','SalasController');
 Route::controller('objetos','ObjetosController');
+Route::resource('contacto','MensajesController');
 
 
 /* ----------------------  Rutas admin ------------------------------------------*/

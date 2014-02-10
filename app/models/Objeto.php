@@ -35,4 +35,7 @@ class Objeto extends Eloquent {
          	
         return $validator->passes();
 	}
+	public static function cantidad(){
+		return DB::table('objetos')->count();
+	}
 }

@@ -58,4 +58,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function es_administrador(){
 		return $this->administrador;
 	}
+	public static function cantidad_usuarios(){
+		return DB::table('users')->count();
+	}
 }
