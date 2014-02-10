@@ -5,7 +5,7 @@
 @stop
 
 @section('navegacion')
-	<li><a href="index.html"><i class="fa fa-cog"></i> Panel</a></li>
+	<li><a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-cog"></i> Panel</a></li>
     <li class="active"><i class="fa fa-table"></i> Salas</li>
 @stop
 

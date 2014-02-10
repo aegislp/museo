@@ -10,7 +10,15 @@
 @stop
 
 @section('contenido')
- 
+ <form method="POST">
+@if(Session::has('mensaje'))
+<div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Ok!</strong> {{Session::get('mensaje')}}.
+</div>
+
+
+@endif 	
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -25,10 +33,14 @@
 			<td>{{$usuario->usuario}}</td>
 			<td>{{$usuario->email}}</td>
 			<td>{{$usuario->created_at}}</td>
-			<td><button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button></td>
+			<td >
+				<button type="submit" class="btn btn-default btn-sm  pull-right" name="usuario" value="{{ $usuario->id}}">
+					<span class="glyphicon glyphicon-trash"></span>
+				</button>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>
 </table>
-
+</form>
 @stop

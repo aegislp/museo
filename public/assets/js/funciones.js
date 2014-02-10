@@ -63,6 +63,8 @@ function info_objetos(event){
 		}
 	)
 }
+
+
 $(document).ready(function(){
 
 	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
@@ -81,4 +83,5 @@ $(document).ready(function(){
 	$('.btn-trivia').click(ver_trivia) 
 	$('.btn-juego').click(juego_objetos) 
 	$('.btn_objetos').click(info_objetos) 
+	
 })

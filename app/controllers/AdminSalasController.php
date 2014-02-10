@@ -89,7 +89,7 @@ class AdminSalasController extends BaseController {
 
 	public function getTrivias($sala_id){
 		$sala = Sala::findOrFail($sala_id);
-		return View::make('administracion.trivias',array('sala'=>$sala));
+		return View::make('administracion.salas.trivias',array('sala'=>$sala));
 	}
 	
 	public function postTrivias($sala_id){
@@ -100,7 +100,7 @@ class AdminSalasController extends BaseController {
 
 		$sala->trivias()->save($trivia);
 
-		return View::make('administracion.trivias',array('sala'=>$sala));
+		return View::make('administracion.salas.trivias',array('sala'=>$sala));
 	}
 
 	public function postEliminarTrivia(){

@@ -69,8 +69,11 @@
             
           </div>
         </div><!-- /.row -->
+
+
+        
         @yield('contenido')
       </div>
 
-       </div>
+</div>
 @stop

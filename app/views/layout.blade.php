@@ -33,10 +33,10 @@
             @yield('contenedor') 
              
             <hr>
-
-            <footer>
+            
+            <footer >
                 <p>&copy; Company 2013</p>
-            </footer>
+            </footer> 
        
     </body>
 </html>

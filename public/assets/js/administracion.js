@@ -28,6 +28,12 @@ function eliminarTrivia(event){
 function eliminarObjeto(event){
 	document.location = $(event.currentTarget).attr('rel');
 }
+function nueva_trivia(){
+	$('#formulario_trivia').toggle();
+	$('#tabla-trivias').toggle();
+
+	
+}
 
 $(document).ready(function(){
 
@@ -89,7 +95,8 @@ $(document).ready(function(){
 		$('input[name="portada_h"]').attr('name','portada');
 	});
 
-
+$('#btn_nueva_trivia,#btn_cancelar_obj').click(nueva_trivia);
+$('#btn_cancel_obj').click($.unblockUI);
 	
     
 

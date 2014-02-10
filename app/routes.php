@@ -25,7 +25,8 @@ Route::controller('objetos','ObjetosController');
 
 
 /* ----------------------  Rutas admin ------------------------------------------*/
-Route::controller('admin', 'AdministracionController');
+
 Route::get('admin/objetos/sala/{sala_id}', array('as'=>'admin_objetos','uses'=>'AdminObjetosController@index'));
 Route::controller('admin/objetos', 'AdminObjetosController');
 Route::controller('admin/salas', 'AdminSalasController');
+Route::controller('admin', 'AdministracionController');

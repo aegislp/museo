@@ -47,6 +47,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('administrador', function()
 {
+	return Auth::basic('usuario');
 	 
 });
 /*
