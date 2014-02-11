@@ -30,7 +30,7 @@
 			return View::make('administracion.usuarios',array('usuarios'=>$usuarios ));
 		}
 		public function getMensajes(){
-			$mensajes = Mensaje::all();
+			$mensajes = Mensaje::orderBy('created_at','desc')->get();
 
  			return View::make('administracion.mensajes',array('mensajes'=>$mensajes)) ;
 

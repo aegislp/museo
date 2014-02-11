@@ -43,30 +43,33 @@
     </div><!-- /row -->
     
     <div class="row mt centered">
-      <div class="col-lg-4">
+      <a  href="{{URL::action('SalasController@getIndex')}}" class="col-lg-4 salas_home">
         <img class="img-circle" src="assets/img/pic1.jpg" width="140" alt="">
         <h4>Salas</h4>
         <p>
-          Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica, la cual fue obtenida por científicos argentinos tras realizar excavaciones en Sudán.
+          Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica.
         </p>
         <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
-      </div><!--/col-lg-4 -->
+      </a><!--/col-lg-4 -->
 
-      <div class="col-lg-4">
+      <a href="{{URL::action('ObjetosController@getIndex')}}" class="col-lg-4 salas_home">
+
         <img class="img-circle" src="assets/img/pic2.jpg" width="140" alt="">
         <h4>Objetos</h4>
         <p>
           El museo posee alrededor de 3.000.000 objetos en su colección, y sólo una pequeña parte de los mismos se encuentran en exhibición.
         </p>
         <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
-      </div><!--/col-lg-4 -->
-
-      <div class="col-lg-4">
+      </a><!--/col-lg-4 -->
+      
+      <a class="col-lg-4 salas_home">
+         
         <img class="img-circle" src="assets/img/pic3.jpg" width="140" alt="">
         <h4>Recorrido</h4>
-        <p>Descubre los distintos recorridos que posee el museo a travez de sus salas en espiral que al recorrerlas permiten comprender la evolución de la vida en la Tierra desde sus orígenes hasta la aparición del ser humano</p>
+        <p>El recorrido de nuestras  salas en espiral  permite comprender la evolución de la vida en la Tierra desde sus orígenes hasta la aparición del ser humano</p>
         <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
-      </div><!--/col-lg-4 -->
+       
+      </a><!--/col-lg-4 -->
     </div><!-- /row -->
   </div><!-- /container -->
  

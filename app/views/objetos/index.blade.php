@@ -4,7 +4,7 @@
 
 @include('nav',array('nav'=> array('home'=>URL::route('home'),'Objetos' =>'')))
 
-{{Form::open(array('method'=>'post','role'=>'search'))}}
+{{Form::open(array('method'=>'post','role'=>'search','class'=>'form-search'))}}
 <div class="col-lg-10">
     <input class="form-control" type="text" placeholder="codigo de objeto" name="codigo">
 </div>

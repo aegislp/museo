@@ -1,6 +1,6 @@
 @extends('layout')
  
- 
+ @section('contenedor')
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -18,7 +18,7 @@
                 <li><a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a></li>
                 <li><a href="#">Recorrido</a></li>
                 <li><a href="#">El Museo</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="{{ URL::action('MensajesController@index')}}">Contacto</a></li>
             </ul>
             @if(Auth::check()) 
             <ul class="nav navbar-nav navbar-right">
@@ -40,5 +40,7 @@
 
 
 @yield('contenido')
+
+@stop
  
  

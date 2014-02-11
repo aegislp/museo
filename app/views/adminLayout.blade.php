@@ -33,7 +33,7 @@
             <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Estadisticas</a></li>
             <li><a href="{{URL::action('AdminSalasController@getIndex')}}"><i class="fa fa-picture-o"></i>Salas</a></li>
             <li><a href="{{URL::action('AdministracionController@getUsuarios')}}"><i class="fa fa-group"></i> Usuarios</a></li>
-            <li><a href="typography.html"><i class="fa fa-envelope"></i>Mensajes</a></li>
+            <li><a href="{{URL::action('AdministracionController@getMensajes')}}"><i class="fa fa-envelope"></i>Mensajes</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-sitemap"></i> Secciones <b class="caret"></b>

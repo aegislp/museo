@@ -449,3 +449,11 @@ i{
   color:#FFFFFF !important;
   font-weight: bold !important;
 }
+
+/*-------------------------home -------------*/
+.salas_home{
+  padding: 1em 0em 1em 0em;
+}
+.salas_home:visited{
+    color: red !important;
+}

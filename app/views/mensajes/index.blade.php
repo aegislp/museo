@@ -16,7 +16,7 @@
 </div>
 
 @endif
-  <div class="col-lg-5 col-lg-offset-1" style="border-right:solid 1px #CCC">
+  <div class="col-lg-5 col-lg-offset-1 clearfix" style="border-right:solid 1px #CCC">
 
     <div class="col-lg-12">
      {{ Form::open(array( 'method' => 'POST') ) }}
@@ -40,7 +40,7 @@
   <br>
   <div class="form-group2">
    
-    {{ Form::submit('Enviar', array('class' => 'btn btn-primary btn-lg pull-right')) }}
+    {{ Form::submit('Enviar', array('class' => 'btn btn-primary btn-lg pull-right clearfix')) }}
   </div>
 
  {{Form::close()}}
