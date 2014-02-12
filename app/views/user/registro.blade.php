@@ -9,19 +9,22 @@
 	@include('nav',array('nav'=> array('home'=>URL::route('home'),'registro'=>'')))
 	
 	<div class="rows">
-	@if ($errors->any())
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Por favor corrige los siguentes errores:</strong>
-      <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-      </ul>
-    </div>
-  @endif
-	{{ Form::open(array( 'method' => 'POST', 'id'=>'form_registro') ) }}
-     	<div class="col-lg-6 col-lg-offset-1">
+	
+  		<div class="col-lg-6 col-lg-offset-1">
+  		<h1><i class="fa fa-user fa-6"></i>Registro de nuevo usuario.</h1>	
+  		<hr>	
+		{{ Form::open(array( 'method' => 'POST', 'id'=>'form_registro') ) }}
+     		@if ($errors->any())
+		    <div class="alert alert-danger">
+		      	<button type="button" class="close" data-dismiss="alert">&times;</button>
+		      	<strong>Por favor corrige los siguentes errores:</strong>
+		      	<ul>
+		      		@foreach ($errors->all() as $error)
+		        	<li>{{ $error }}</li>
+		      		@endforeach
+		      	</ul>
+		    </div>
+		  	@endif
 	 	
 		 	<div class="form-group">
 				{{ Form::label('usuario', 'Usuario') }}
@@ -43,12 +46,17 @@
 				 
 				{{ Form::submit('Registrarse',array('class' => 'btn btn-lg pull-right btn-warning')) }}
 			</div>
+
+			{{Form::close()}}
+
+ 		</div>
+ 		<div class="col-lg-5">
+ 			{{HTML::image('assets/img/registro.jpg')}}
  		</div>
   	</div>
   
 
-	{{Form::close()}}
-
+	
 
 @stop
 

@@ -401,9 +401,7 @@ i {
     width: 7em !important;
 }
 
-i{
-  font-size: 18px;
-}
+ 
 .btn-close{
    clear: both;
     display: block;
@@ -454,6 +452,4 @@ i{
 .salas_home{
   padding: 1em 0em 1em 0em;
 }
-.salas_home:visited{
-    color: red !important;
-}
+ 
