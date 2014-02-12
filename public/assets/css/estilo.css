@@ -215,7 +215,7 @@ i {
 .salas img {
     display: inline !important;
     float: left;
-    width: 32% !important;
+    width: 14% !important;
     margin-right: 1em;
 }  
 .salas a{
@@ -373,8 +373,8 @@ i {
 
     .salas img {
       display: block !important;
-    
-     width: 95% !important;
+    clear: both;
+     width: 50% !important;
      margin-bottom: 1em ;
      
     } 
