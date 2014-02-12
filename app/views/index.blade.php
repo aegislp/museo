@@ -16,7 +16,10 @@
                     </button>
                 </form>  
                 <br>
-                <p id="form-login-registro"> ¿No tenes usuario? <a href="">Registrate!!</a><p>      
+                <p id="form-login-registro"> ¿No tenes usuario? 
+                  <a id="btn_registro_user" href="{{URL::action('UsersController@getRegistro')}}">Registrate!!</a>
+                <p>
+                <div id="registro_user"></div>      
             </div> 
             <div class="col-lg-6">
                 <img class="img-responsive" src="assets/img/ipad-hand.png" alt="">
@@ -75,13 +78,4 @@
  
 
 @stop
-
-@section('script')
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-		$('.carousel').carousel()
-
-	})
-</script>
-@stop
+ 

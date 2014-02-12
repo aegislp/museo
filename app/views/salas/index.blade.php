@@ -6,7 +6,7 @@
 
 @section('contenido')
 
-  @include('nav',array('nav'=> array('home'=>'home','salas'=>'')))
+  @include('nav',array('nav'=> array('home'=>URL::route('home'),'salas'=>'')))
 <div class="container salas">
   @foreach ($salas as $sala)    
     
@@ -15,7 +15,7 @@
         {{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas',array('class'=>'img-rounded'))}}
         <h3>{{$sala->nombre}}</h3>
         <p>{{$sala->descripcion}}</p>
-        <p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+        <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
       </a> 
       <br>
       <hr>

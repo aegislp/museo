@@ -36,6 +36,9 @@ function cambiar_sala(id_sala){
 		{sala:id_sala},
 		function (response){
 			$('#contenedor_sala').empty().append(response);
+			$('.btn-trivia').click(ver_trivia) 
+	$('.btn-juego').click(juego_objetos) 
+	$('.btn_objetos').click(info_objetos) 
 		}
 	)
  
@@ -64,7 +67,7 @@ function info_objetos(event){
 	)
 }
 
-
+ 
 $(document).ready(function(){
 
 	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
@@ -83,5 +86,38 @@ $(document).ready(function(){
 	$('.btn-trivia').click(ver_trivia) 
 	$('.btn-juego').click(juego_objetos) 
 	$('.btn_objetos').click(info_objetos) 
+
+	 
+    $('#form_registro').validate({
+        rules :{
+            email : {
+                required : true,
+                email    : true
+            },
+            usuario : {
+                required : true,
+                minlength : 3,
+                maxlength : 14
+            },
+            password : {
+                required : true,
+                minlength : 4,
+                maxlength : 9
+            }
+
+        },
+        messages : {
+            email : {
+                required : "Debe ingresar el email",
+                email    : "Debe ingresar un email valido"
+            },
+            usuario : {
+                required : "Debe ingresar un nombre",
+                minlength : "EL nombre debe tener un minimo de 3 caracteres",
+                maxlength : "EL nombre debe tener un maximo de 9 caracteres"
+            }
+        }
+    });    
+ 
 	
 })

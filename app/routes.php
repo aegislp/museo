@@ -19,6 +19,9 @@ Route::get('/',array( 'as'=>'home',function()
 
 Route::post('login','UsersController@login');
 Route::get('logout','UsersController@logout');
+Route::controller('usuario','UsersController');
+ 
+
 
 Route::controller('salas','SalasController');
 Route::controller('objetos','ObjetosController');

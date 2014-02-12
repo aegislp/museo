@@ -22,7 +22,7 @@ class SalasController extends BaseController {
 	public function postAjax(){
 
 		$sala = Sala::find(Input::get('sala'));
-		return View::make('salas.detalle',array('seleccion'=>$sala));
+		return View::make('salas.detalle',array('sala'=>$sala));
 	} 
 	public function  getTrivia($sala_id){
 		$trivia = Sala::findOrFail($sala_id)->trivias->first();

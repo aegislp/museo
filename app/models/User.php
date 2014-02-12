@@ -5,13 +5,10 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
+	 
 	protected $table = 'users';
-
+	protected $fillable = array('usuario', 'email', 'password');
+	public 	$errores;
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -61,4 +58,25 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static function cantidad_usuarios(){
 		return DB::table('users')->count();
 	}
+	 
+    
+    public function datos_validos($data)
+    {
+        $rules = array(
+            'email'     => 'required|email|unique:users',
+            'usuario' => 'required|min:4|max:40',
+            'password'  => 'required|min:4|confirmed'
+        );
+        
+        $validator = Validator::make($data, $rules);
+        
+        if ($validator->passes())
+        {
+            return true;
+        }
+        
+        $this->errores = $validator->errors();
+        
+        return false;
+    }
 }

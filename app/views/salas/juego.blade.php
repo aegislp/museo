@@ -10,16 +10,13 @@
       <div class="modal-body">
        
         <div class="row">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-lg-12">
           <div class="thumbnail">
-            {{HTML::image('assets/img/salas/'.$objeto->id.'/objetos/'.$objeto->id.'.jpg')}}
+            {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
             <div class="caption">
               <h3>{{$objeto->nombre}}</h3>
               <p>{{$objeto->descripcion}}</p>
-              <p>
-                 
-                <a href="#" class="btn btn-default" role="button">Aceptar</a>
-              </p>
+               
             </div>
           </div>
         </div>
