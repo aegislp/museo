@@ -12,7 +12,7 @@
     
        <a class="col-lg-12" href="{{ URL::action('SalasController@getShow',$sala->id) }}">
          
-        {{HTML::image('assets/img/salas/'.$sala->id.'/portada.png','salas',array('class'=>'img-rounded'))}}
+        {{HTML::image('assets/img/salas/'.$sala->id.'/portada.jpg','salas',array('class'=>'img-circle'))}}
         <h3>{{$sala->nombre}}</h3>
         <p>{{$sala->descripcion}}</p>
         <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
@@ -21,7 +21,7 @@
       <hr>
   @endforeach
  
- 
+  
 </div>
 @stop
 

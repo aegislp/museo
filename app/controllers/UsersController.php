@@ -32,7 +32,10 @@ class UsersController extends BaseController {
 	 	if( $user->datos_validos(Input::all()) ){
 
 	 		$user->fill(Input::all());
+	 		$user->password = Hash::make($user->password);
 	 		$user->save();
+
+	 		Auth::login($user);
 	 		 
 	 		return Redirect::route('home');
 	 	} 
