@@ -17,8 +17,8 @@
 				'cant_usuarios' => User::cantidad_usuarios(),
 				'cant_mensajes' =>Mensaje::cant_no_leidos(),
 				'cant_salas' => Sala::cantidad(),
-				'cant_objetos'=> Objeto::cantidad()
-
+				'cant_objetos'=> Objeto::cantidad(),
+				'estadisticas'=> Estadistica::all()
 			);
 			return View::make('administracion.index',$cantidades) ;
 		}
@@ -36,6 +36,12 @@
 
 		}
  
+ 		public function postMensajes(){
+			$mensaje = Mensaje::findOrFail(Input::get('mensaje'));
+ 			$mensaje->delete();
+ 			return Redirect::action('AdministracionController@getMensajes')->with('mensaje','Se borro el mensaje correctamente');
+
+		}
 		public function postUsuarios(){
 			$usuario = User::findOrFail(Input::get('usuario'));
  			$usuario->delete();

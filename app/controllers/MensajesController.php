@@ -20,6 +20,18 @@ class MensajesController extends BaseController {
 		return Redirect::action('MensajesController@index')->with('mensaje','El mensaje fue enviado');
 	}
 
+	public function show($mensaje_id){
+
+
+		$mensaje = Mensaje::findOrFail($mensaje_id);
+
+		$mensaje->estado = 'L';
+
+		$mensaje->update();
+
+		return View::make('mensajes.detalle',array('mensaje' =>$mensaje));
+	}
+
  
 
 }

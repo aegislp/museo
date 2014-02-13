@@ -41,7 +41,7 @@
                 <button  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" type="button" class="btn-juego btn btn-default">
                   <i class="fa fa-gamepad"></i> Juegos
                 </button>
-                <button type="button" class="btn btn-default"> <i class="fa fa-thumbs-o-up"></i> like</button>
+                <button rel="{{URL::action('SalasController@getMeGusta',$seleccion->id)}}" type="button" class="btn_like btn btn-default"> <i class="fa fa-thumbs-o-up"></i> like</button>
               </div>
               
             </div>

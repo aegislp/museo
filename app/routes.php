@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/',array( 'as'=>'home',function()
+Route::get('/',array( 'as'=>'home','after'=>'sumar_visita',function()
 {
 	return View::make('index');
 }));

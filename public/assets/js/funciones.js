@@ -39,6 +39,7 @@ function cambiar_sala(id_sala){
 			$('.btn-trivia').click(ver_trivia) 
 	$('.btn-juego').click(juego_objetos) 
 	$('.btn_objetos').click(info_objetos) 
+		$('.btn_like').click(me_gusta) 
 		}
 	)
  
@@ -67,6 +68,30 @@ function info_objetos(event){
 	)
 }
 
+function ver_mensaje(event){
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			$('#cont_mensaje').empty().append(response);
+			$('#modal_msj').modal('show')
+			$(event.currentTarget).attr('class','')
+		}
+
+
+	);
+}
+function me_gusta(event){
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			$('#juegos').empty().append(response);
+			$('#modal_like').modal('show');
+		}
+
+
+	);
+}
+
  
 $(document).ready(function(){
 
@@ -86,7 +111,9 @@ $(document).ready(function(){
 	$('.btn-trivia').click(ver_trivia) 
 	$('.btn-juego').click(juego_objetos) 
 	$('.btn_objetos').click(info_objetos) 
+	$('.btn_like').click(me_gusta) 
 
+	$('#tabla_mensajes').find('tr').click(ver_mensaje);
 	 
     $('#form_registro').validate({
         rules :{

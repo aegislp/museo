@@ -10,6 +10,11 @@
 @stop
 
 @section('contenido')
+ 
+@section('/menu/mensajes')  
+active
+@stop
+
  <form method="POST">
 @if(Session::has('mensaje'))
 <div class="alert alert-success alert-dismissable">
@@ -25,16 +30,16 @@
 			<th>#</th><th>Nombre</th><th>Asunto</th><th>Fecha</th><th></th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="tabla_mensajes">
 		
 		@foreach($mensajes  as $i => $mensaje)
-		<tr>
+		<tr class="{{ $mensaje->estado == 'R' ? 'no_leido' : '' }}" rel="{{URL::route('contacto.show',$mensaje->id)}}">
 			<td>{{$i+1}}</td>
 			<td>{{$mensaje->nombre}}</td>
 			<td>{{$mensaje->asunto}}</td>
 			<td>{{$mensaje->created_at}}</td>
 			<td >
-				<button type="submit" class="btn btn-default btn-sm  pull-right" name="usuario" value="">
+				<button type="submit" class="btn btn-default btn-sm  pull-right" name="mensaje" value="{{$mensaje->id}}">
 					<span class="glyphicon glyphicon-trash"></span>
 				</button>
 			</td>
@@ -43,4 +48,6 @@
 	</tbody>
 </table>
 </form>
+
+<div id="cont_mensaje"></div>
 @stop

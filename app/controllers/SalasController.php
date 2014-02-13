@@ -35,8 +35,10 @@ class SalasController extends BaseController {
 	}
 	public function getMeGusta($sala_id){
 		$sala = Sala::findOrFail($sala_id);
-		$sala->punto = $sala->punto + 1;
+		$sala->votos +=   1;
 		$sala->save();
+
+		return View::make('salas.like');
 
 		
 	}  

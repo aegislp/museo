@@ -3,7 +3,9 @@
 @section('titulo_admin')
 	Salas <small> cree y administre salas</small>
 @stop
-
+@section('/menu/salas')
+active
+@stop
 @section('navegacion')
 	<li><a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-cog"></i> Panel</a></li>
     <li class="active"><i class="fa fa-table"></i> Salas</li>

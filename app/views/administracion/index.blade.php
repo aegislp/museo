@@ -1,6 +1,8 @@
 @extends('adminLayout')
 
-
+@section('/menu/inicio')
+active
+@stop
 
 @section('contenido')
  
@@ -150,6 +152,12 @@
  {{ HTML::script('assets/js/highcharts.js' )}}
 <script type="text/javascript">
   $(document).ready(function(){
+        var estadisticas = [];
+        /* lleno las estadostocas */
+        @foreach($estadisticas as $i => $estadistica)
+          estadisticas[{{$i}}] = [ Date.UTC(2014,  {{ $estadistica->mes() }}, {{$i + 1}}), {{$estadistica->visitas}} ];
+        @endforeach
+                    
       $('#contenedor_grafico').highcharts({
             chart: {
                 type: 'spline'
@@ -174,7 +182,7 @@
             tooltip: {
                 formatter: function() {
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' m';
+                        Highcharts.dateFormat('%e. %b', this.x) +': '+ this.y +' visitas';
                 }
             },
             
@@ -183,38 +191,7 @@
                 // Define the data points. All series have a dummy year
                 // of 1970/71 in order to be compared on the same x axis. Note
                 // that in JavaScript, months start at 0 for January, 1 for February etc.
-                data: [
-                    [Date.UTC(2014,  1, 1), 0   ],
-                    [Date.UTC(2014,  1, 2), 50   ],
-                    [Date.UTC(2014,  1, 3), 0   ],
-                    [Date.UTC(2014,  1, 4), 60   ],
-                    [Date.UTC(2014,  1, 5), 70   ],
-                    [Date.UTC(2014,  1, 6), 0   ],
-                    [Date.UTC(2014,  1, 7), 0   ],
-                    [Date.UTC(2014,  1, 8), 0   ],
-                    [Date.UTC(2014,  1, 9), 0   ],
-                    [Date.UTC(2014,  1, 10), 1000   ],
-                    [Date.UTC(2014,  1, 11), 0   ],
-                    [Date.UTC(2014,  1, 12), 0   ],
-                    [Date.UTC(2014,  1, 13), 0   ],
-                    [Date.UTC(2014,  1, 14), 0   ],
-                    [Date.UTC(2014,  1, 15), 0   ],
-                    [Date.UTC(2014,  1, 16), 0   ],
-                    [Date.UTC(2014,  1, 17), 0   ],
-                    [Date.UTC(2014,  1, 18), 0   ],
-                    [Date.UTC(2014,  1, 19), 0   ],
-                    [Date.UTC(2014,  1, 20), 0   ],
-                    [Date.UTC(2014,  1, 21), 20   ],
-                    [Date.UTC(2014,  1, 22), 0   ],
-                    [Date.UTC(2014,  1, 23), 0   ],
-                    [Date.UTC(2014,  1, 24), 0   ],
-                    [Date.UTC(2014,  1, 25), 0   ],
-                    [Date.UTC(2014,  1, 26), 0   ],
-                    [Date.UTC(2014,  1, 27), 0   ],
-                    [Date.UTC(2014,  1, 28), 0   ] 
-                    
-                     
-                ]
+                data: estadisticas
             },    ]
         });
 

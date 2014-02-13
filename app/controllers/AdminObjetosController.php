@@ -37,6 +37,10 @@ class AdminObjetosController extends BaseController {
 
 
 			if(Input::file('portada')){
+
+				File::delete('assets/img/salas/'.$sala->id.'/objetos/'.$objeto->id.'_s.jpg');
+		 		File::delete('assets/img/salas/'.$sala->id.'/objetos/'.$objeto->id.'_b.jpg');
+		 
 				$directorio = public_path().'/assets/img/salas/'.$sala->id.'/objetos/';
 				$foto = Input::file('portada');
 				$foto->move($directorio,$objeto->id."_b.jpg");

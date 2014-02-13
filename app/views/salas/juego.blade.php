@@ -15,7 +15,7 @@
             {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
             <div class="caption">
               <h3>{{$objeto->nombre}}</h3>
-              <p>{{$objeto->descripcion}}</p>
+             
                
             </div>
           </div>

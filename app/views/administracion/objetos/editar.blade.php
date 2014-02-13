@@ -15,6 +15,8 @@
 
 	@include('administracion.header_sala',array('sala'=>$sala))
 
+{{ Form::model($objeto, array('method' => 'POST',  'files'=>true ,'url'=>URL::action('AdminObjetosController@postEditar')) ) }}
+ 
 	<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">
 	        <a class="navbar-brand" href="#">
@@ -22,22 +24,16 @@
 				Objeto:
 			</a>
 	    </div>
-	    <div class="collapse navbar-collapse navbar-ex1-collapse">
-	        <ul class="nav navbar-nav navbar-right">
-	            <li id="btn_objeto_nuevo">
-	            	<a href="{{URL::action('AdminObjetosController@getCrear',$sala->id)}}">
-	            		<span class="glyphicon glyphicon-floppy-disk"></span>
-			   			Guardar Todo
-			   		</a>
-			   	</li>
-	        </ul>
-	    </div>
+	  
+	     <button type="submit" class="btn btn-default pull-right">
+	   		<span class="glyphicon glyphicon-floppy-disk"></span>Guardar Todo
+		</button>
+	 
 	   
 	</nav>
  
  
-{{ Form::model($objeto, array('method' => 'POST',  'files'=>true ,'url'=>URL::action('AdminObjetosController@postEditar')) ) }}
- 	{{ Form::hidden('objeto_id', $objeto->id) }}
+	{{ Form::hidden('objeto_id', $objeto->id) }}
  	{{ Form::hidden('sala_id', $sala->id) }}
   	<div   class="rows">
 	  	<div class="form-group col-lg-6">
@@ -64,7 +60,7 @@
 				<div style="display:none">
 	 				{{ Form::file('portada_h',null,array('id'=>'portada'))  }}  
 	 			</div>	
-				<div class="thumbnail">
+				<div class="thumbnail" style="width:25%;">
 				      
 				    <div class="caption">
 				      	<a   class="btn-close" id="btn_cambiar_portada">×</a>
@@ -93,22 +89,16 @@
  	</div>
 	
 
-{{ Form::close() }}
+
  <br>	
- <nav class="navbar navbar-default" role="navigation">
-	    <div class="navbar-header">
-	        
-	    </div>
-	    <div class="collapse navbar-collapse navbar-ex1-collapse">
-	        <ul class="nav navbar-nav navbar-right">
-	            <li id="btn_objeto_nuevo">
-	            	<a href="{{URL::action('AdminObjetosController@getCrear',$sala->id)}}">
-	            		<span class="glyphicon glyphicon-floppy-disk"></span>
-			   			Guardar Todo
-			   		</a>
-			   	</li>
-	        </ul>
-	    </div>
-	   
-	</nav>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header pull-right">
+	    <button type="submit" class="btn btn-default">
+	   		<span class="glyphicon glyphicon-floppy-disk"></span>Guardar Todo
+		</button>
+	</div>
+</nav>
+
+
+	{{ Form::close() }}
 @stop	

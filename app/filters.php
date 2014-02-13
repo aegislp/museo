@@ -84,3 +84,8 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+Route::filter('sumar_visita',function(){
+    Estadistica::addVisita();
+});

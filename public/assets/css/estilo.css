@@ -410,6 +410,9 @@ i {
     text-align: right;
     width: 100%;
 }
+.no_leido td{
+    background-color: #D9EDF7;
+}
 
 /*---------------------salas-------------*/
 #body-trivia button{

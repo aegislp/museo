@@ -51,7 +51,7 @@
 
  		</div>
  		<div class="col-lg-5">
- 			{{HTML::image('assets/img/registro.jpg')}}
+ 			{{HTML::image('assets/img/registro.png')}}
  		</div>
   	</div>
   
