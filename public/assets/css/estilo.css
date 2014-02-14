@@ -349,8 +349,18 @@ i {
         width: 100%;
         height: auto;
      }     
-
-
+#busqueda_objeto{
+      display:  block;
+      clear: both;
+    
+    }
+#busqueda_objeto input{
+      display:  inline-block;
+ 
+ 
+      width: 86%;
+    
+    }
 @media   screen and (max-width: 800px) {
      #carousel-example-captions,#barra_busqueda,#ul_menu,.caption p{
         display: none;
@@ -370,14 +380,37 @@ i {
     #span_busqueda{
       display: none;
     }
-
+    #busqueda_objeto input{
+      display: inline-block;
+      font-size: 18px;
+      height: 42px;
+      width: 86%;
+    }
+    #busqueda_objeto button{
+        padding-left: 5px;
+        padding-right: 5px;
+   
+    }
     .salas img {
       display: block !important;
     clear: both;
      width: 50% !important;
      margin-bottom: 1em ;
+     margin:0  auto;
      
     } 
+    .salas h3{
+      clear: both;
+      margin:0  auto;
+    }
+    .img-obj {
+      width: 47% !important;
+      display: inline-block !important;
+    }
+
+    #desc_detalle img{
+      width: 100% !important;
+    }
 }
 .barra{
 
@@ -413,8 +446,14 @@ i {
 .no_leido td{
     background-color: #D9EDF7;
 }
+#thumbnails .thumbnail{
+  width: 25% !important;
+}
 
 /*---------------------salas-------------*/
+.salas a{
+  color: #666666;
+}
 #body-trivia button{
   text-align: left;
   padding-left: 1em;

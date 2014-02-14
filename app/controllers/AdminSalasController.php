@@ -34,7 +34,7 @@ class AdminSalasController extends BaseController {
 			$sala->fill(Input::all());
 			$sala->save();
 
-			/* ipload de imagenes de la galeria*/	
+			/* upload de imagenes de la galeria*/	
 			$directorio = public_path().'/assets/img/salas/'.$sala->id.'/galeria/';
 			$fotos = Input::file('archivos',array());
 			$contador = count(File::glob($directorio."*_b.jpg"));
@@ -44,6 +44,9 @@ class AdminSalasController extends BaseController {
 				$thumb = Image::make($directorio.$contador."_b.jpg")->resize(150, null,true)->save($directorio.$contador++.'_s.jpg');
 			}
 				 
+			//imagen de portada
+			
+			Image::make($directorio.Input::get('portada'))->resize(150, 150,true)->save($directorio.'portada.jpg');		 
 			/*--------------------------------------*/	 
 			
 			return Redirect::action('AdminSalasController@getIndex')->with('nueva',$sala);

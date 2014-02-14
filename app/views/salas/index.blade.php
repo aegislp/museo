@@ -12,10 +12,10 @@
     
        <a class="col-lg-12" href="{{ URL::action('SalasController@getShow',$sala->id) }}">
          
-        {{HTML::image('assets/img/salas/'.$sala->id.'/portada.jpg','salas',array('class'=>'img-circle'))}}
+        {{HTML::image('assets/img/salas/'.$sala->id.'/galeria/portada.jpg','salas',array('class'=>'img-circle'))}}
         <h3>{{$sala->nombre}}</h3>
         <p>{{$sala->descripcion}}</p>
-        <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
+        <p><i class="glyphicon glyphicon-plus pull-right">mas...</i> </p>
       </a> 
       <br>
       <hr>

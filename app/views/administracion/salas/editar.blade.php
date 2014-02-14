@@ -49,13 +49,16 @@
 </nav>
 
 
-<div id="thumbnails"  >
+<div id="thumbnails" >
 @foreach( File::glob('assets/img/salas/'.$sala->id.'/galeria/*_s.jpg')  as $imagen)
 	
 	    <div class="thumbnail" id="{{ str_replace('.','',basename($imagen)) }}">
 	      
 	      <div class="caption">
+	      	<input type="radio" name="portada" value="{{ basename($imagen)  }}">portada de sala
 	      	<button aria-hidden="true"  class="close" type="button" rel="{{URL::action('AdminSalasController@postEliminarImagenSala').'/'.str_replace('assets/img/salas/'.$sala->id.'/galeria/','',$imagen)}}">×</button>
+		    
+		    <br><br>
 		    <a class="fancybox" href=" {{asset(str_replace('_s','_b',$imagen))}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
 	        	{{HTML::image($imagen)}}
 	        </a>
