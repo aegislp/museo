@@ -5,6 +5,7 @@ class SalasController extends BaseController {
 	public function getIndex()
 	{
 		$salas = Sala::getActivas();
+		 
 		return View::make('salas.index',array('salas' => $salas )); 
 	}
 

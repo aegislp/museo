@@ -89,3 +89,8 @@ Route::filter('csrf', function()
 Route::filter('sumar_visita',function(){
     Estadistica::addVisita();
 });
+
+App::missing(function($exception)
+{
+    return View::make('error404');
+});

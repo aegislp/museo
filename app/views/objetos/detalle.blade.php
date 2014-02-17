@@ -11,8 +11,8 @@
 				  {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
 				    	 
 				 <div class="cabecera_objeto">
-					<p>Nombre:{{$objeto->nombre}}</p>
-				 	<p>Nombre Cientifico:{{$objeto->nombre_cientifico}}</p>
+					<h3>Nombre:{{$objeto->nombre}}</h3>
+				 	<h3>Nombre Cientifico:{{$objeto->nombre_cientifico}}</h3>
 				</div>
 				<hr>
 				<div>

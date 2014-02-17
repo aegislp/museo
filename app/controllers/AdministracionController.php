@@ -48,6 +48,13 @@
  			return Redirect::action('AdministracionController@getUsuarios')->with('mensaje','Se borro el usuario correctamente');
 
 		}
-	 	
+	 	public function getEstadisticas(){
+			$cantidades = array( 	
+				 
+				'estadisticas'=> Estadistica::all()
+			);
+			return View::make('administracion.estadisticas',$cantidades) ;
+
+		}
 		
 	}

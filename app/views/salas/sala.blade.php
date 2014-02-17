@@ -52,7 +52,7 @@
             
             <p> 
             @foreach( glob('assets/img/salas/'.$seleccion->id.'/galeria/*_s.jpg')  as $imagen)
-              <a class="fancybox" href="/museo/public/{{str_replace('_s','_b',$imagen)}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">{{HTML::image($imagen)}}</a>
+              <a class="fancybox" href="/museo/public/{{str_replace('_s','_b',$imagen)}}" data-fancybox-group="gallery"  >{{HTML::image($imagen)}}</a>
             @endforeach
             </p>
             

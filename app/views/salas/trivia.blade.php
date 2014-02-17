@@ -6,13 +6,13 @@
         <h4 class="modal-title">{{$trivia->pregunta}}</h4>
       </div>
       <div class="modal-body" id="body-trivia">
-          <button type="button" class="btn btn-primary btn-lg btn-block">{{$trivia->opcion1}}
+          <button type="button" class="btn btn-default btn-lg btn-block">1 - {{$trivia->opcion1}}
           
           </button>
-          <button type="button" class="btn btn-default btn-lg btn-block">{{$trivia->opcion2}}
+          <button type="button" class="btn btn-default btn-lg btn-block">2 - {{$trivia->opcion2}}
               
           </button>
-          <button type="button" class="btn btn-default btn-lg btn-block">{{$trivia->opcion3}}
+          <button type="button" class="btn btn-default btn-lg btn-block">3 - {{$trivia->opcion3}}
              
           </button>
     

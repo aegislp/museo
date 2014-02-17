@@ -36,10 +36,14 @@ function cambiar_sala(id_sala){
 		{sala:id_sala},
 		function (response){
 			$('#contenedor_sala').empty().append(response);
-			$('.btn-trivia').click(ver_trivia) 
-	$('.btn-juego').click(juego_objetos) 
-	$('.btn_objetos').click(info_objetos) 
-		$('.btn_like').click(me_gusta) 
+			$('.btn-trivia').click(ver_trivia); 
+			$('.btn-juego').click(juego_objetos); 
+			$('.btn_objetos').click(info_objetos); 
+			$('.btn_like').click(me_gusta);
+
+			//cambia la navegacion
+		 
+			$('.breadcrumb').find('li:last').text( $('#contenedor_sala').find('.heder_sala').find('h1').text()) 
 		}
 	)
  

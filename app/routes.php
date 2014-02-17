@@ -26,6 +26,7 @@ Route::controller('usuario','UsersController');
 Route::controller('salas','SalasController');
 Route::controller('objetos','ObjetosController');
 Route::resource('contacto','MensajesController');
+Route::resource('estadisticas','EstadisticasController');
 
 
 /* ----------------------  Rutas admin ------------------------------------------*/
@@ -34,3 +35,4 @@ Route::get('admin/objetos/sala/{sala_id}', array('as'=>'admin_objetos','uses'=>'
 Route::controller('admin/objetos', 'AdminObjetosController');
 Route::controller('admin/salas', 'AdminSalasController');
 Route::controller('admin', 'AdministracionController');
+
