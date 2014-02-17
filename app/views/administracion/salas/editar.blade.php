@@ -49,10 +49,10 @@
 </nav>
 
 
-<div id="thumbnails" >
+<div style="display:inline-block;width:100%" >
 @foreach( File::glob('assets/img/salas/'.$sala->id.'/galeria/*_s.jpg')  as $imagen)
 	
-	    <div class="thumbnail" id="{{ str_replace('.','',basename($imagen)) }}">
+	    <div class="thumbnail col-lg-4" id="{{ str_replace('.','',basename($imagen)) }}">
 	      
 	      <div class="caption">
 	      	<input type="radio" name="portada" value="{{ basename($imagen)  }}">portada de sala

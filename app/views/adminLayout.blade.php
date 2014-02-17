@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="@yield('/menu/inico')">
-              <a href="{{URL::route('home')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
+              <a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
             </li>
             <li class="@yield('/menu/estadisticas')">
               <a href=""><i class="fa fa-bar-chart-o"></i> Estadisticas</a></li>

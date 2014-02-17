@@ -358,7 +358,7 @@ i {
       display:  inline-block;
  
  
-      width: 86%;
+      width: 83%;
     
     }
 @media   screen and (max-width: 800px) {
@@ -493,5 +493,6 @@ i {
 /*-------------------------home -------------*/
 .salas_home{
   padding: 1em 0em 1em 0em;
+  color:#666666;
 }
  

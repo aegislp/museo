@@ -4,6 +4,8 @@
    Museo: Contacto   
 @stop
 
+@include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Contacto' =>'')))
+
 @section('contenido')
 
 

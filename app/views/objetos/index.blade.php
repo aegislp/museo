@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-@include('nav',array('nav'=> array('home'=>URL::route('home'),'Objetos' =>'')))
+@include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Objetos' =>'')))
 
 {{Form::open(array('method'=>'post','role'=>'search','class'=>'form-search clearfix'))}}
 <div class="col-lg-6 col-lg-offset-3" id="busqueda_objeto">
@@ -37,7 +37,7 @@
 @if(!is_null($objeto))
 
 <div class="panel panel-default   col-lg-5 col-lg-offset-1" style="clear:both;margin-top: 1em"  >
-    <div class="panel-heading"></div>
+    <div class="panel-heading">Codigo: {{$objeto->getCodigo()}}</div>
     <div class="panel-body" id="desc_detalle" >
                  
         {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}

@@ -38,4 +38,8 @@ class Objeto extends Eloquent {
 	public static function cantidad(){
 		return DB::table('objetos')->count();
 	}
+	public function getCodigo(){
+
+		return str_pad($this->sala->id, 3, "0", STR_PAD_LEFT).str_pad($this->id, 5, "0", STR_PAD_LEFT);
+	}
 }

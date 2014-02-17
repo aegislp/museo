@@ -6,7 +6,7 @@
 
 @section('contenido')
 
-  @include('nav',array('nav'=> array('home'=>URL::route('home'),'salas'=>'')))
+  @include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'salas'=>'')))
 <div class="container salas">
   @foreach ($salas as $sala)    
     
