@@ -8,7 +8,7 @@
 @section('contenido')
    @include('nav',array('nav'=> array('home'=>URL::route('home'),'salas'=>URL::action('SalasController@getIndex'),$sala->nombre =>URL::action('SalasController@getShow',$sala->id),'Objetos' =>'')))
 
-<div class="col-lg-2">
+<div class="col-lg-2" id="categoria_obj">
     <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#">Categorias</a></li>
         @foreach($sala->categorias as $categoria)

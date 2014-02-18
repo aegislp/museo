@@ -48,14 +48,31 @@ function cambiar_sala(id_sala){
 	)
  
 }
+function evaluar_respuesta(event){
+	var respuesta = $(event.currentTarget).attr('rel');
+	var solucion = $('#btn_trivia').find('input').val()  ;
+	var correcta = solucion == respuesta;
+	$('#btn_trivia').addClass('hidden')
+	$('.btn-trivia-sig').click(ver_trivia) 
+	if(correcta){
+		$('#correcta').removeClass('hidden')
+	}else{
+		$('.r_correcta').text($('#btn_trivia').find('button[rel="'+solucion+'"]').text())
+		$('#incorrecta').removeClass('hidden')
 
+	}
+
+
+}
 function ver_trivia(event){
 
+	$('.modal').modal('hide')
 	$.get(
 		$(event.currentTarget).attr('rel') ,
 		function(response){
 			$('#juegos').empty().append(response);
 			$('#modal_juego').modal('show');
+			$('.btn-respuesta').click(evaluar_respuesta);
 		}
 
 	)
@@ -68,6 +85,8 @@ function info_objetos(event){
 		function(response){
 			$('#detalle_objeto').empty().append(response);
 			$('#modal_detalle_objeto').modal('show')
+			$('.btn_like_obj').click(megusta_obj)
+
 		}
 	)
 }
@@ -84,6 +103,18 @@ function ver_mensaje(event){
 
 	);
 }
+function megusta_obj(event){
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			
+			$('.btn_like_obj').empty().text(":) Te gusta");
+		}
+
+
+	);
+}
+
 function me_gusta(event){
 	$.get(
 		$(event.currentTarget).attr('rel'),

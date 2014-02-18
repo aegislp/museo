@@ -1,4 +1,7 @@
 @extends('base')
+@section('/menu/objetos')
+active
+@stop
 
 @section('contenido')
 
@@ -15,12 +18,7 @@
  
 {{Form::close()}}
 
-<style type="text/css">
-    #desc_detalle img{
-        width: 50%;
-    }
-
-</style> 
+  
 @if ($errors->any())
     <div class="alert alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -42,8 +40,6 @@
                  
         {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
 
-
-   
         <div class="cabecera_objeto">
             <h4>Nombre:{{$objeto->nombre}}</h4>
             <h4>Nombre Cientifico:{{$objeto->nombre_cientifico}}</h4>

@@ -5,7 +5,7 @@
     <div class="panel-body">
         <div class="col-md-3">
 	       <a href="#" class="thumbnail">
-	           {{HTML::image('assets/img/salas/'.$sala->id.'/portada.png')}}
+	           {{HTML::image('assets/img/salas/'.$sala->id.'/galeria/portada.jpg')}}
 	       </a>
 	    </div>
     	<div class="caption col-md-9">

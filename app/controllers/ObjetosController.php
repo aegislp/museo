@@ -49,4 +49,14 @@ class ObjetosController extends \BaseController {
 		return Redirect::action('ObjetosController@getIndex',$objeto_id)->withErrors($errores);
 		
 	}
+
+	public function getMegusta($objeto_id){
+		
+		$objeto = Objeto::findOrFail($objeto_id);
+		$objeto->votos += 1;
+		$objeto->save();
+
+		$respuesta['codigo'] = 'ok';
+		return Response::json($respuesta);
+	}
  }

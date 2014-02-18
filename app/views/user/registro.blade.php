@@ -3,10 +3,10 @@
 @section('title')  
    Museo: Registro de Usuario   
 @stop
-
+ 
 @section('contenido')
 
-	@include('nav',array('nav'=> array('home'=>URL::route('home'),'registro'=>'')))
+	@include('nav',array('nav'=> array('inicio'=>URL::route('home'),'registro'=>'')))
 	
 	<div class="rows">
 	

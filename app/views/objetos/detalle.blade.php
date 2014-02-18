@@ -3,6 +3,10 @@
   	<div class="modal-dialog">
     	<div class="modal-content">
 		    <div class="modal-header">
+		 	  	<button rel="{{URL::action('ObjetosController@getMegusta',$objeto->id)}}" type="button" class="btn_like_obj btn btn-sm btn-warning pull-left"> 
+		 	  		<i class="fa fa-thumbs-o-up"></i> Me gusta
+		 	  	</button>
+         
 		       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		       <h4 class="modal-title"> </h4>
 		    </div>
@@ -23,6 +27,9 @@
 	          
 	      	</div>
 	      	<div class="modal-footer">
+	      		<button rel="{{URL::action('ObjetosController@getMegusta',$objeto->id)}}" type="button" class="btn_like_obj btn btn-sm btn-warning pull-left"> 
+		 	  		<i class="fa fa-thumbs-o-up"></i> Me gusta
+		 	  	</button>
 	        	<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 	      	</div>
 	    </div>

@@ -13,12 +13,26 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class=""><a href="{{URL::route('home')}}">Inicio</a></li>
-                <li><a href="{{ URL::action('SalasController@getIndex')}}">Salas</a></li>
-                <li><a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a></li>
-                <li><a href="#">Recorrido</a></li>
-                <li><a href="#">El Museo</a></li>
-                <li><a href="{{ URL::action('MensajesController@index')}}">Contacto</a></li>
+
+                <li class="@yield('/menu/inicio')">
+                    <a href="{{URL::route('home')}}">Inicio</a>
+                </li>
+                
+                <li class="@yield('/menu/salas')">
+                    <a href="{{ URL::action('SalasController@getIndex')}}">Salas</a>
+                </li>
+                <li class="@yield('/menu/objetos')">
+                    <a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a>
+                </li>
+                <li class="@yield('/menu/recorrido')">
+                    <a href="#">Recorrido</a>
+                </li>
+                <li class="@yield('/menu/museo')">
+                    <a href="#">El Museo</a>
+                </li>
+                <li class="@yield('/menu/contacto')">
+                    <a href="{{ URL::action('MensajesController@index')}}">Contacto</a>
+                </li>
             </ul>
             @if(Auth::check()) 
             <ul class="nav navbar-nav navbar-right">

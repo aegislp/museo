@@ -3,7 +3,9 @@
 @section('title')  
    Museo: Salas   
 @stop
-
+@section('/menu/salas')
+active
+@stop
 @section('contenido')
 
   @include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'salas'=>'')))

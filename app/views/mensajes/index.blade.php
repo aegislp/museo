@@ -3,6 +3,9 @@
 @section('title')  
    Museo: Contacto   
 @stop
+@section('/menu/contacto')
+active
+@stop
 
 @include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Contacto' =>'')))
 

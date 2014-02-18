@@ -1,7 +1,14 @@
 @extends('base')
 
+@section('/menu/inicio')
+active
+@stop
+  
 @section('contenido')
  
+
+
+
 @if(!Auth::check()) 
 <div id="headerwrap">
     <div class="container">

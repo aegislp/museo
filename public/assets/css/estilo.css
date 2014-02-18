@@ -154,6 +154,7 @@ i {
 }
 .modal-title, .modal-header button {
   color: #FFFFFF !important;
+  display: inline-block !important;
 }
 
 .breadcrumb{
@@ -421,6 +422,9 @@ i {
     #desc_detalle img{
       width: 100% !important;
     }
+    #categoria_obj{
+      display: none
+    }
 }
 .barra{
 
@@ -483,6 +487,19 @@ i {
 .heder_sala h1{
   display: inline-block !important;
 }
+#correcta i,#incorrecta i{
+  font-size: 6em;
+}
+#correcta ,#incorrecta{
+  text-align: center;
+}
+#correcta i{
+  color: #F4CD0A !important;
+}
+ #desc_detalle img{
+        width: 50%;
+    }
+
 /*------------------------- login -------------------------*/
 #form-login input{
     margin-bottom: 1em;
