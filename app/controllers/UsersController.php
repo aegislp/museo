@@ -27,8 +27,7 @@ class UsersController extends BaseController {
 
 	 	$user = new User;
 
-	 	print_r(Input::all());
-	 	
+ 	 	
 	 	if( $user->datos_validos(Input::all()) ){
 
 	 		$user->fill(Input::all());
@@ -36,7 +35,7 @@ class UsersController extends BaseController {
 	 		$user->save();
 
 	 		Auth::login($user);
-	 		 
+	 		Event::fire('user.registro', array($user)); 
 	 		return Redirect::route('home');
 	 	} 
 

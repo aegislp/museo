@@ -13,20 +13,38 @@ class Estadistica extends Eloquent {
     	 
 		return  $date->format('m') - 1;
 	}
-	public static function addVisita(){
+	public static function getEstadisticaHoy(){
+
 
 		$date =  new DateTime();
 
 		$fecha = $date->format('Y-m-d');
 		 
-		$estadistica_hoy = Estadistica::firstOrNew(array('dia'=>$fecha)); 
-	 
+		return Estadistica::firstOrNew(array('dia'=>$fecha)); 
+	}
+	public static function addVisita(){
+
+	 	$estadistica_hoy = Estadistica::getEstadisticaHoy();
+
 		if(is_null($estadistica_hoy)){
 			
 			$estadistica_hoy = new Estadistica;
 		} 
 		 
 		$estadistica_hoy->visitas += 1;
+
+		$estadistica_hoy->save();  
+	}
+	public static function addUsuario(){
+
+		$estadistica_hoy = Estadistica::getEstadisticaHoy();
+	 
+		if(is_null($estadistica_hoy)){
+			
+			$estadistica_hoy = new Estadistica;
+		} 
+		 
+		$estadistica_hoy->registro += 1;
 
 		$estadistica_hoy->save();  
 	}

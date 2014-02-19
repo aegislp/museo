@@ -14,7 +14,8 @@ class CreateEstadisticasTable extends Migration {
 		Schema::create('estadisticas',function($table){
 			$table->increments('id');
 		 	$table->date('dia')->default( date('Y-m-d'));
-		 	$table->integer('visitas')->unsigned();
+		 	$table->integer('visitas')->unsigned()->default(0);
+		 	$table->integer('registro')->unsigned()->default(0);
 			$table->timestamps();
 		});
 	}

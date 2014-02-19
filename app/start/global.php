@@ -81,3 +81,18 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Eventos
+|--------------------------------------------------------------------------
+|
+|Registro los eventos de registo de usuarios
+*/
+Event::listen('user.registro', function($user)
+{
+    Estadistica::addUsuario();
+});
+
+
+
