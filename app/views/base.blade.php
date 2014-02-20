@@ -1,23 +1,43 @@
 @extends('layout')
  
- @section('contenedor')
-<div class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                {{HTML::image('assets/img/icono.png')}}
-                <b>Museo<br>
-                 La Plata </b>
+@section('contenedor')
+<style type="text/css">
+    .navbar-header a, .navbar-header button{
+        color: white !important
+    }
+    .busqueda{
+        background-color: white;
+        padding: 0.5em 0em 0.5em 0em;
+        margin-left: 1em;
+    }
+     .busqueda input{
+        border:solid 1px white;
+        font-size: 2em;
+        padding: 3px !important;
+        height: 2em;
+    }
+    .busqueda i{
+        font-size: 3em;
+        padding-left: 0.5em;
+    }
+</style>
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+ 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        
+        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <i class="fa fa-angle-down"></i> 
+        </button>
+        <button class="navbar-toggle" id="cmdSearchCollapse" type="button" data-toggle="collapse"   href="#collapseOne">
+            <i class="fa fa-search icon-search"></i>
+        </button>
+        <a href="" class="navbar-brand">Museo</a>
+    </div>
 
-            </a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
 
                 <li class="@yield('/menu/inicio')">
                     <a href="{{URL::route('home')}}" style="padding:15px;"><i class="fa fa-home"></i></a>
@@ -38,8 +58,14 @@
                 <li class="@yield('/menu/contacto')">
                     <a href="{{ URL::action('MensajesController@index')}}">Contacto</a>
                 </li>
-            </ul>
-            @if(Auth::check()) 
+        </ul>
+      <form class="navbar-form navbar-left hide" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        @if(Auth::check()) 
             <ul class="nav navbar-nav navbar-right">
                  
                 <li class="dropdown">
@@ -53,14 +79,26 @@
                 </li>
             </ul>
             @endif
-        </div>
-      </div>
-</div>
+    </div><!-- /.navbar-collapse -->
+ 
+  <div class="row clearfix">
  
 
-@include('user.aviso')
+  <div class="col-lg-6 collapse busqueda" id="collapseOne" >
+        {{Form::open(array('method'=>'post','role'=>'search','class'=>'form-search clearfix'))}}
+       
+            <input class="form-control" type="text" placeholder="codigo de objeto" name="codigo" style="width:75%;float:left" />
+           <button type="submit" class="btn btn-default btn-sm">
+              <i class="fa fa-search"></i>  
+            </button>
+      
+        {{Form::close()}}
+    </div>
 
-
+</div>  
+</nav>
+ 
+  
 @yield('contenido')
 
 @stop
