@@ -40,6 +40,9 @@
 		public static function cantidad(){
 			return DB::table('salas')->count();
 		}
+		public static function destacadas(){
+			return Sala::with('objetos')->where('activa','=',1)->get();
+		}
 	}
 
 ?>	

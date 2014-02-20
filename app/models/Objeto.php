@@ -19,7 +19,9 @@ class Objeto extends Eloquent {
 	public static function getObjetoAzar($sala_id){
 		return Objeto::where('sala_id','=',$sala_id)->orderBy(DB::raw('RAND()'))->first();
 	}
-
+	public static function mas_vistos(){
+		return Objeto::all()->take(6) ;
+	}
 	public function datos_validos($datos){
 		$rules = array(
             'nombre' => 'required|min:2|max:200', 
