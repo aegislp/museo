@@ -1,51 +1,120 @@
 @extends('base')
 
-@section('/menu/inicio')
-active
-@stop
+ 
   
 @section('contenido')
+  
+<style type="text/css">
+ 
+    .barra{
+        background-color: white;
+    }
+    .barra > div{
+        padding: 0.5em;
+    }
+    .barra p{
+        font-size: 2em;
+        font-family: 'serif'
+    }
+    
+    .panel-heading{
+        border-bottom:solid 5px #2BE8CE !important;
+        color: #2BE8CE !important;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    .panel-body{
+        background-color: #F2F2F2;
+    }
+    .salas_index{
+        border-bottom: solid 1px #F2F2F2;
+        color: #666666 !important;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .salas_index > img{
+        float: left;
+        margin-right: 1em;
+    } 
+</style>
  
 
-
-
-@if(!Auth::check()) 
-<div id="headerwrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Para una mejor experiencia te invitamos a Ingresar.</h1>
-                <form role="form" id="form-login" method="post" action="{{ URL::action('UsersController@login') }}" class="col-lg-12">
-                    <input type="email" class="form-control" name="email" placeholder="Email">
-                    <input type="password" class="form-control" name="pass" placeholder="Password">
-                    <button type="submit" class="btn btn-default btn-warning">
-                        Ingresar
-                    </button>
-                </form>  
-                <br>
-                <p id="form-login-registro"> ¿No tenes usuario? 
-                  <a id="btn_registro_user" href="{{URL::action('UsersController@getRegistro')}}">Registrate!!</a>
-                <p>
-                <div id="registro_user"></div>      
-            </div> 
-            <div class="col-lg-6">
-                <img class="img-responsive" src="assets/img/ipad-hand.png" alt="">
-            </div> 
-        </div><!-- /row -->
-    </div><!-- /container -->
-  </div><!-- /headerwrap -->
-
-@endif
-
-
-<div id="baner_museo">
-    {{HTML::image('assets/img/banner.jpg','Museo')}}
+<div class="rows barra clearfix" style="margin-top:2em">
+  
+    <div class="col-lg-6">
+  
+      <p>Museo de Ciencia Naturales </p>
+       
+         
+    </div>
+    <div class="col-lg-6">
+        {{Form::open(array('method'=>'post','role'=>'search','class'=>'form-search clearfix'))}}
+        <div class="" id="busqueda_objeto" >
+            <input class="form-control" type="text" placeholder="codigo de objeto" name="codigo" />
+           <button type="submit" class="btn btn-default btn-sm">
+              <i class="fa fa-search"></i> <span id="span_busqueda"> Buscar</span>
+            </button>
+        </div>
+        {{Form::close()}}
+    </div>
 </div>
 
+<div class="rows clearfix" style="margin-top:2em">
+    <div class="col-lg-6">
+          <div class="panel panel-default">
+              <div class="panel-heading">Salas</div>
+              <div class="panel-body">
+                 <a  href="{{URL::action('SalasController@getIndex')}}" class="salas_index">
+                    <img class="img-rounded" src="assets/img/pic1.jpg" width="140" alt="">
+                    <h4>Salas</h4>
+                    <p>
+                      Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica.
+                    </p>
+                    <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
+                  </a>
+                    <a  href="{{URL::action('SalasController@getIndex')}}" class="salas_index">
+                    <img class="img-rounded" src="assets/img/pic1.jpg" width="140" alt="">
+                    <h4>Salas</h4>
+                    <p>
+                      Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica.
+                    </p>
+                    <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
+                  </a>
+              </div>
+            </div>
+    </div>
+    <div class="col-lg-6">
+         <div class="panel panel-default">
+              <div class="panel-heading">Objetos Destacados</div>
+              <div class="panel-body">
+                  <a  href="{{URL::action('SalasController@getIndex')}}" class="salas_index">
+                    <img class="img-circle" src="assets/img/pic1.jpg" width="140" alt="">
+                    <h4>Salas</h4>
+                    <p>
+                      Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica.
+                    </p>
+                    <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
+                  </a>
+                    <a  href="{{URL::action('SalasController@getIndex')}}" class="salas_index">
+                    <img class="img-circle" src="assets/img/pic1.jpg" width="140" alt="">
+                    <h4>Salas</h4>
+                    <p>
+                      Más de veinte salas de exhibición situadas . Posee además la única colección de arte egipcio en Latinoamérica.
+                    </p>
+                    <p><i class="glyphicon glyphicon-plus">mas...</i> </p>
+                  </a>
+              </div>
+            </div>
+    </div>
+</div>
+
+
 <div class="container">
+<hr>
     <div class="row mt centered">
       <div class="col-lg-6 col-lg-offset-3">
-        <h1>Museo de Ciencia Naturales <br> La Plata</h1>
+        
         <h3>Los museos de verdad son los sitios en los que el tiempo se transforma en espacio.<br>
             <strong>Orhan Pamuk</strong>
         </h3>

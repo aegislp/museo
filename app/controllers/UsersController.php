@@ -2,7 +2,9 @@
 
 class UsersController extends BaseController {
 
-	 public function login(){
+	
+	 
+	public function login(){
 
 	 	$campos = array('email' => Input::get('email'), 'password' => Input::get('pass'));
 	 	if (Auth::attempt($campos)){

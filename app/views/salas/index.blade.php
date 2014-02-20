@@ -4,7 +4,7 @@
    Museo: Salas   
 @stop
 @section('/menu/salas')
-active
+m_activo
 @stop
 @section('contenido')
 
