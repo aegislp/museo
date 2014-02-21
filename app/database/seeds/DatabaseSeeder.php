@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ObjetoTableSeeder');
 		$this->call('TriviaTableSeeder');
 		$this->call('EstadisticaTableSeeder');
+		$this->call('PuntoTableSeeder');
 	}
 
 }

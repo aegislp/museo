@@ -44,6 +44,10 @@ class UsersController extends BaseController {
 	 	return Redirect::action('UsersController@getRegistro')->withInput()->withErrors($user->errores);
 	} 
 	public function getNavegacion(){
-		return View::make('user.navegacion');
+		return View::make('user.navegacion',array('navegacion'=>Punto::with('Sala')));
+	}
+
+	public function getAudio($audio){
+		return View::make('user.guiaaudio',array('audio'=>$audio));
 	}
 }

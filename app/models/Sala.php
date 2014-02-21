@@ -6,6 +6,9 @@
 		public 		$errores;
 		protected 	$fillable = array('numero', 'nombre', 'descripcion');
 
+		public function puntos(){
+			return $this->hasMany('Objeto');
+		}
 		public function objetos(){
 			return $this->hasMany('Objeto');
 		}

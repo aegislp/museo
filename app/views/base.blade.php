@@ -84,7 +84,7 @@
  </div>
   
 
-<a class='flotante img-circle' href='#' ><i class="fa fa-map-marker"></i></a>
+<a class='flotante img-circle' href="{{URL::action('UsersController@getNavegacion')}}"><i class="fa fa-map-marker"></i></a>
 @stop
 
 

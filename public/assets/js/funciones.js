@@ -126,7 +126,15 @@ function me_gusta(event){
 
 	);
 }
-
+function audio(event){
+	$.get(
+		$(event.currentTarget).attr('rel'),
+		function(response){
+			$('#cont_audio').empty().append(response)
+			$('#modal_audio').modal('show')
+		}
+	)
+}
  
 $(document).ready(function(){
 
@@ -147,6 +155,7 @@ $(document).ready(function(){
 	$('.btn-juego').click(juego_objetos) 
 	$('.btn_objetos').click(info_objetos) 
 	$('.btn_like').click(me_gusta) 
+	$('.btn_audio').click(audio) 
 
 	$('#tabla_mensajes').find('tr').click(ver_mensaje);
 	 

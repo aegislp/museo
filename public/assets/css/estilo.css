@@ -105,5 +105,10 @@ body{
     #span_busqueda{
         display: none;
     }
+
+    .popover{
+  position: relative !important;
+  max-width: 90% !important;
+}
 }
 
