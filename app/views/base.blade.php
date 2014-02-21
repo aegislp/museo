@@ -1,26 +1,8 @@
 @extends('layout')
  
 @section('contenedor')
-<style type="text/css">
-    .navbar-header a, .navbar-header button{
-        color: white !important
-    }
-    .busqueda{
-        background-color: white;
-        padding: 0.5em 0em 0.5em 0em;
-        margin-left: 1em;
-    }
-     .busqueda input{
-        border:solid 1px white;
-        font-size: 2em;
-        padding: 3px !important;
-        height: 2em;
-    }
-    .busqueda i{
-        font-size: 3em;
-        padding-left: 0.5em;
-    }
-</style>
+  <div class="container">
+
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
  
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -98,9 +80,11 @@
 </div>  
 </nav>
  
+     @yield('contenido')
+ </div>
   
-@yield('contenido')
 
+<a class='flotante img-circle' href='#' ><i class="fa fa-map-marker"></i></a>
 @stop
 
 

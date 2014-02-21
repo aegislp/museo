@@ -10,7 +10,7 @@
 		       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		       <h4 class="modal-title"> </h4>
 		    </div>
-		    <div class="modal-body" id="body-objeto">
+		    <div class="modal-body clearfix" id="body-objeto">
 			
 				  {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
 				    	 

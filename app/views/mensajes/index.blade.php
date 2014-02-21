@@ -10,7 +10,9 @@ active
 @include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Contacto' =>'')))
 
 @section('contenido')
-
+<div class="row mark">
+        <h3><i class="fa fa-envelope"></i>  CONTACTOS</h3>
+    </div>
 
 <div class="rows container">
    <h1>Contacto</h1> 
@@ -68,6 +70,8 @@ active
     </ul>  
   </div>
 </div>
+ 
+
 @stop
 
  

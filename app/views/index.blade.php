@@ -27,15 +27,16 @@
 
  
 <div class="row" >
-  <div class="col-xs-12 mark">
+
+
+</div>
+
+ <div class="row" style=" background-color:white !important">
+      <div class="col-xs-12 mark">
 
         <h3><i class="fa fa-eye"></i> OBJETOS MAS VISTOS </h3>
         <div class="indicator-down color-two-d"></div>
   </div>
-
-</div>
-
- <div class="row" style="padding:1em;background-color:white !important">
      @foreach(Objeto::mas_vistos() as $objeto)
   <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
