@@ -4,8 +4,26 @@ body{
   font-size: 16px;
     
 }
- 
+ a:hover{
+    text-decoration: none !important;
+ }
+
+ .modal-header{
+    background-color: #F0523F;
+    display:inline-block;
+ }
+ #select_sala {
+    display: none;
+ }
 /*--------------------- home ----------------------*/
+.btn_objetos{
+  cursor: pointer ;
+  
+}
+.mark{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .mark h3{
     background: none repeat  #F0523F;
     color: #FFFFFF;
@@ -97,18 +115,139 @@ body{
     font-size: 3em;
 }
 
+
+ /*---------------------------navegacion --- - - -- */
+
+ 
+.botonera,.btn_inicio{
+  font-weight: bold;
+  font-size: 2em;
+ 
+}
+.btn_inicio{
+   color: white;
+}
+.mark > a > i{
+
+}
+.popover{
+  position: relative !important;
+  width: 100% !important;
+ 
+  margin-left: 1em !important;
+}
+ 
+.reyeno{
+
+   
+    height: 15% !important;
+    clear: both;
+    display: block;
+    
+
+}
+.sala_nav{
+  
+  padding-left: 0px !important;
+
+}
+.titulo{
+  width: 100% !important;
+  padding-top:0px !important;
+  margin-top: 0px !important;  
+  clear: right !important;  
+}
+.titulo span{
+   
+  width: 50% !important;
+  display: block;
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+}
+.linea{
+  background: url("../img/linea.png") repeat-y fixed center center rgba(0, 0, 0, 0) !important;
+  padding-bottom: 1em;
+}
+.nav0{ border-left: 5px solid #2a8095;}
+.nav1{ border-left: 5px solid #F87E6F;}
+.nav2{ border-left: 5px solid #b45c50;}
+.nav3{ border-left: 5px solid #9DDD3A;}
+.nav4{ border-left: 5px solid #5d85ca;}
+.nav5{ border-left: 5px solid #7ABBCA;}
+.nav6{ border-left: 5px solid #BAEECA;}
+.nav7{ border-left: 5px solid #C8EE8D;}
+.nav8{ border-left: 5px solid #34646F;}
+.nav9{ border-left: 5px solid #F89F93;}
+  
+.nav0  > span,.visitado0,.visitado0  i { background-color:#2a8095;color:white;}
+.nav1  > span,.visitado1 ,.visitado1 i { background-color:#F87E6F;color:white;}
+.nav2  > span ,.visitado2,.visitado2 i { background-color:#b45c50;color:white;}
+.nav3  > span ,.visitado3,.visitado3 i { background-color:#9DDD3A;color:white;}
+.nav4  > span ,.visitado4,.visitado4 i { background-color:#5d85ca;color:white;}
+.nav5  > span ,.visitado5,.visitado5 i { background-color:#7ABBCA;color:white;}
+.nav6  > span ,.visitado6,.visitado6 i { background-color:#BAEECA;color:white;}
+.nav7  > span ,.visitado7,.visitado7 i { background-color:#C8EE8D;color:white;}
+.nav8  > span ,.visitado8,.visitado8 i { background-color:#34646F;color:white;}
+.nav9  > span ,.visitado9 ,.visitado9 i{ background-color:#F89F93;color:white;}
+
+.right.nav0{
+  border-right: 5px solid #2a8095;  
+  border-left: 0px !important;
+} 
+.right.nav1{
+  border-right: 5px solid #F87E6F;  
+  border-left: 0px !important;
+}
+.right.nav2{
+  border-right: 5px solid #b45c50;  
+  border-left: 0px !important;
+} 
+.right.nav3{
+  border-right: 5px solid #9DDD3A;  
+  border-left: 0px !important;
+}
+
+.right.nav4{
+  border-right: 5px solid #5d85ca;  
+  border-left: 0px !important;
+}
+
+.right.nav1{
+  border-right: 5px solid #F87E6F;  
+  border-left: 0px !important;
+}
+
+.right.nav1{
+  border-right: 5px solid #F87E6F;  
+  border-left: 0px !important;
+}
+
+.right.nav1{
+  border-right: 5px solid #F87E6F;  
+  border-left: 0px !important;
+}
+
+.right.nav1{
+  border-right: 5px solid #F87E6F;  
+  border-left: 0px !important;
+}
+
+.popover-content {
+    display: inline !important;
+ 
+}
+.popover{
+  max-width: 45% !important;
+}
+
 @media   screen and (max-width: 800px) {
 
-    .descripcion_salas{
+     #span_busqueda,#btn_nav_grande,.descripcion_salas{
         display: none;
     }
-    #span_busqueda{
-        display: none;
-    }
+   
 
-    .popover{
-  position: relative !important;
-  max-width: 90% !important;
-}
+
 }
 

@@ -14,6 +14,10 @@
         <button class="navbar-toggle" id="cmdSearchCollapse" type="button" data-toggle="collapse"   href="#collapseOne">
             <i class="fa fa-search icon-search"></i>
         </button>
+
+        <button class="navbar-toggle"  type="button" >
+            <a   href="{{URL::action('UsersController@getNavegacion')}}"><i class="fa fa-map-marker"></i></a>
+        </button>
         <a href="" class="navbar-brand">Museo</a>
     </div>
 
@@ -32,7 +36,7 @@
                     <a href="{{ URL::action('ObjetosController@getIndex')}}">Objetos</a>
                 </li>
                 <li class="@yield('/menu/recorrido')">
-                    <a href="#">Recorrido</a>
+                    <a href="{{URL::action('UsersController@getNavegacion')}}">Recorrido</a>
                 </li>
                 <li class="@yield('/menu/museo')">
                     <a href="#">El Museo</a>
@@ -83,8 +87,8 @@
      @yield('contenido')
  </div>
   
-
-<a class='flotante img-circle' href="{{URL::action('UsersController@getNavegacion')}}"><i class="fa fa-map-marker"></i></a>
+<div id="detalle_objeto"></div>  
+<a  id="btn_nav_grande" class='flotante img-circle' href="{{URL::action('UsersController@getNavegacion')}}"><i class="fa fa-map-marker"></i></a>
 @stop
 
 

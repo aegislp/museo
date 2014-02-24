@@ -131,7 +131,9 @@ function audio(event){
 		$(event.currentTarget).attr('rel'),
 		function(response){
 			$('#cont_audio').empty().append(response)
-			$('#modal_audio').modal('show')
+			$('#modal_audio').modal('show');
+			var clase = $(event.currentTarget).parent().parent().attr('class'); 
+			$(event.currentTarget).parent().parent().attr('class',clase.replace('nav','visitado') ); 
 		}
 	)
 }

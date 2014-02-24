@@ -47,7 +47,11 @@ class UsersController extends BaseController {
 		return View::make('user.navegacion',array('navegacion'=>Punto::with('Sala')));
 	}
 
-	public function getAudio($audio){
-		return View::make('user.guiaaudio',array('audio'=>$audio));
+	public function getAudio($punto){
+		
+		$punto = Punto::find($punto);
+		Session::put('nav-'.$punto->id,true);;
+		 
+		return View::make('user.guiaaudio',array('audio'=>$punto->id));
 	}
 }

@@ -7,7 +7,7 @@
 		protected 	$fillable = array('numero', 'nombre', 'descripcion');
 
 		public function puntos(){
-			return $this->hasMany('Objeto');
+			return $this->hasMany('Punto');
 		}
 		public function objetos(){
 			return $this->hasMany('Objeto');

@@ -14,12 +14,13 @@
 <div class="row" style="padding:1em">
   
     @foreach(Sala::destacadas() as $sala)
-    <div class="col-xs-6 col-md-3">
+    <a class="col-xs-6 col-md-3" href="{{ URL::action('SalasController@getShow',$sala->id) }}">
+    
         <div class="thumbnail">
             {{HTML::image('assets/img/salas/'.$sala->id.'/galeria/0_b.jpg')}}
             <div class="caption"><h4>{{$sala->nombre}}</h4></div>
         </div>
-    </div>
+    </a>
     @endforeach
 
 </div>
@@ -38,7 +39,7 @@
         <div class="indicator-down color-two-d"></div>
   </div>
      @foreach(Objeto::mas_vistos() as $objeto)
-  <div class="col-xs-6 col-md-3">
+  <div class="btn_objetos col-xs-6 col-md-3" rel="{{URL::action('ObjetosController@getDetalle',$objeto->id)}}" >
     <div class="thumbnail">
       {{HTML::image('assets/img/salas/'.$objeto->sala->id.'/objetos/'.$objeto->id.'_b.jpg')}}
 

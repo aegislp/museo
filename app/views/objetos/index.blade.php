@@ -69,7 +69,7 @@ active
 
     @foreach($destacados as $destacado) 
     
-    <div class=" {{ is_null($objeto) ? 'col-xs-6 col-lg-3' : 'col-lg-6 ' }}  btn_objetos" >
+    <div class=" {{ is_null($objeto) ? 'col-xs-6 col-lg-3' : 'col-lg-6 ' }}" >
     <div   rel="{{URL::action('ObjetosController@getDetalle',$destacado->id)}}"  class="btn_objetos thumbnail">
 
       {{HTML::image('assets/img/salas/'.$destacado->sala->id.'/objetos/'.$destacado->id.'_b.jpg')}}
@@ -82,5 +82,5 @@ active
  </div>
 
 </div>
-<div id="detalle_objeto"></div>  
+
 @stop

@@ -14,6 +14,7 @@ class CreatePuntosTable extends Migration {
 		Schema::create('puntos',function($table){
 			$table->increments('id');
 			$table->integer('sala_id')->unsigned();
+			$table->string('color');
 			$table->string('titulo');
 			$table->timestamps();
 		});

@@ -8,7 +8,7 @@ class Punto extends Eloquent {
 	public static $rules = array();
 
 	public function sala(){
-		return $this->bellongsTo('Sala');
+		return $this->belongsTo('Sala');
 
 	}
 
