@@ -1,6 +1,6 @@
 @extends('base')
 @section('/menu/objetos')
-active
+m_activo
 @stop
 
 @section('contenido')

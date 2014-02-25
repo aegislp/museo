@@ -4,12 +4,13 @@
    Museo: Contacto   
 @stop
 @section('/menu/contacto')
-active
+m_activo
 @stop
 
-@include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Contacto' =>'')))
 
 @section('contenido')
+@include('nav',array('nav'=> array('Inicio'=>URL::route('home'),'Contacto' =>'')))
+
 <div class="row mark">
         <h3><i class="fa fa-envelope"></i>  CONTACTOS</h3>
     </div>

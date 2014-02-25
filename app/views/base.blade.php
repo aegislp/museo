@@ -23,7 +23,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" id="menu_principal">
 
                 <li class="@yield('/menu/inicio')">
                     <a href="{{URL::route('home')}}" style="padding:15px;"><i class="fa fa-home"></i></a>
@@ -38,9 +38,7 @@
                 <li class="@yield('/menu/recorrido')">
                     <a href="{{URL::action('UsersController@getNavegacion')}}">Recorrido</a>
                 </li>
-                <li class="@yield('/menu/museo')">
-                    <a href="#">El Museo</a>
-                </li>
+                
                 <li class="@yield('/menu/contacto')">
                     <a href="{{ URL::action('MensajesController@index')}}">Contacto</a>
                 </li>

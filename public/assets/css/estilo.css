@@ -11,11 +11,133 @@ body{
  .modal-header{
     background-color: #F0523F;
     display:inline-block;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+ }
+ .modal-footer{
+
  }
  #select_sala {
     display: none;
  }
+ /*---------------------------bootstrap --------------*/
+ .tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #ddd;
+}
+
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+  *border-left-color: #ffffff;
+}
 /*--------------------- home ----------------------*/
+.m_activo{
+  background-color:#F0523F !important;
+  color: white !important; 
+}
+.m_activo a{
+  
+  color: white !important; 
+}
+#menu_principal > li > a:hover{
+  background-color: #F0523F !important;      
+}
 .btn_objetos{
   cursor: pointer ;
   
@@ -34,7 +156,7 @@ body{
      font-weight: bold;
     margin-top: 0px; 
   }
-  .indicator-down {
+.indicator-down {
         border-left: 2em solid rgba(0, 0, 0, 0);
     border-right: 2em solid rgba(0, 0, 0, 0);
     border-top: 2em solid #F0523F;
@@ -46,7 +168,40 @@ body{
     width: 0;
     z-index: 900;
 }
+.header_sala{
+  background: none repeat  #F0523F;
+    color: #FFFFFF;
+  height: 4em;  
+}
+.header_sala >div {
+  height: 100%;
+   background: none repeat  #F0523F;
+    color: #FFFFFF;
+  height: 4em; 
+}
 
+.header_sala >div > ul{
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+}
+.header_sala >div > ul > li{
+  list-style: none !important;
+  float: left;
+  height: 100%;
+   display: inline-block;
+   width: 25%;
+   border-left: solid 2px white;
+  text-align: center;
+  padding-top: 1em; 
+}
+.header_sala >div > ul > li > a{
+  color:white;
+  display: inline-block;
+ 
+  font-size: 1.5em;
+  text-align: center;
+} 
 .navbar-header a, .navbar-header button{
     color: white !important
 }
@@ -110,6 +265,7 @@ body{
     padding: 1em;
     border-radius: 30px 2px 2px 30px;
     margin-bottom: 1em;
+    color: #F0523F;
 }
 .flotante i{
     font-size: 3em;
@@ -243,11 +399,11 @@ body{
 
 @media   screen and (max-width: 800px) {
 
-     #span_busqueda,#btn_nav_grande,.descripcion_salas{
+     #ul_menu,#span_busqueda,#btn_nav_grande,.descripcion_salas{
         display: none;
     }
    
-
+    
 
 }
 

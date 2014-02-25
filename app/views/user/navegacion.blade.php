@@ -4,6 +4,10 @@
    Museo: Navegacion   
 @stop
 
+@section('/menu/recorrido')
+m_activo
+@stop
+
 @section('script')
     {{ HTML::script('assets/js/jplayer/jquery.jplayer.min.js') }}
 @stop

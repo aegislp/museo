@@ -9,6 +9,7 @@
         {{ HTML::style('assets/css/bootstrap.css', array('media' => 'screen')) }}
         {{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen')) }}
         {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
+        {{HTML::style('assets/fancy/jquery.fancybox.css')}}
         @yield('css')
     
         {{ HTML::script('assets/js/jquery-1.10.1.min.js') }}

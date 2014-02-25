@@ -1,51 +1,62 @@
 @extends('base')
-@section('css')
-  {{HTML::style('assets/fancy/jquery.fancybox.css')}}
-@stop
+
+ 
 @section('contenido')
    @include('nav',array('nav'=> array('home'=>'home','salas'=>URL::action('SalasController@getIndex'),$seleccion->nombre=>'')))
 
 
-<div class="row"  style="padding:1em;">
-	 
- 
-	<div class="col-md-12">
-		
-		<select class="form-control input-lg" id="select_sala">
-			@foreach ($salas as $sala)	
-			<option value="{{$sala->id}}">{{$sala->nombre}}</option>
-			 @endforeach
-		</select>
+<div class="row">
+	
+	<select class="form-control input-lg" id="select_sala">
+		@foreach ($salas as $sala)	
+		<option value="{{$sala->id}}">{{$sala->nombre}}</option>
+		 @endforeach
+	</select>
     
-	  <div class="tabbable tabs-left">
+	<div class="tabbable tabs-left">
         <ul class="nav nav-tabs" id="ul_menu">
         	@foreach ($salas as $sala)	
-          <li class="@if($sala->id == $seleccion->id)active@endif">
-          	<a  class="link_sala" alt="{{$sala->id}}" data-toggle="tab" >
-          	{{$sala->nombre}}</a>
-          </li>
-          
-          @endforeach	
+            <li class="@if($sala->id == $seleccion->id)active@endif">
+          	    <a  class="link_sala" alt="{{$sala->id}}" data-toggle="tab" >
+          	         {{$sala->nombre}}
+                </a>
+            </li>
+            @endforeach	
         </ul>
+        
         <div class="tab-content col-md-offset-2">
           <div class="tab-pane active" id="contenedor_sala">
-            <div class="heder_sala">
-              <h1> {{$seleccion->nombre}}</h1>
-              <div class="btn-salas btn-group" style="float:right">
-                <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}" type="button" class="btn btn-default"> 
-                  <i class="fa fa-bars"></i> Objetos
-                </a>
-                <button type="button" class="btn-trivia btn btn-default" rel="{{URL::action('SalasController@getTrivia',$seleccion->id)}}">
-                  <i class="fa fa-question"></i> Trivia
-                </button>
-                <button  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" type="button" class="btn-juego btn btn-default">
-                  <i class="fa fa-gamepad"></i> Juegos
-                </button>
-                <button rel="{{URL::action('SalasController@getMeGusta',$seleccion->id)}}" type="button" class="btn_like btn btn-default"> <i class="fa fa-thumbs-o-up"></i> like</button>
-              </div>
-              
+            <div class="row header_sala">
+                <div class="col-lg-6 col-md-12">
+                  <h4>{{$seleccion->nombre}}</h4>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <ul>
+                        <li> 
+                            <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}"> 
+                                <i class="fa fa-bars"></i>  
+                            </a>
+                        </li>  
+                        <li> 
+                            <a class="btn-trivia" rel="{{URL::action('SalasController@getTrivia',$seleccion->id)}}">
+                                <i class="fa fa-question"></i> 
+                            </a>
+                        </li>  
+                        <li>
+                            <a  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" class="btn-juego">
+                                <i class="fa fa-gamepad"></i>  
+                            </a>
+                        </li>  
+                        <li><a rel="{{URL::action('SalasController@getMeGusta',$seleccion->id)}}"   class="btn_like"> 
+                                <i class="fa fa-thumbs-o-up"></i>  
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+
+             
             </div>
-      			<br>
+      			 
             <hr style="display:block:clear:both;">
             {{$seleccion->descripcion}} 
             <hr>
@@ -62,12 +73,10 @@
       </div>
       <!-- /tabs -->
       
-	</div>
+	 
 
 </div>
-<div id="juegos">
-
-</div>
+<div id="juegos"></div>
  
 
 @stop
