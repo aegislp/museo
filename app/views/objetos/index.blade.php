@@ -38,7 +38,7 @@ m_activo
  <div class="row">
     @if(!is_null($objeto))
 
-    <div class="panel panel-default   col-lg-6"  >
+    <div class="panel panel-default   col-lg-6 " style="padding:0px;" >
         <div class="panel-heading">Codigo: {{$objeto->getCodigo()}}</div>
         <div class="panel-body" id="desc_detalle" >
                      
@@ -61,7 +61,7 @@ m_activo
 
  
 
- <div class="{{ is_null($objeto) ? '' : 'col-lg-5 col-lg-offset-1' }}"   style=" background-color:white !important">
+ <div class="{{ is_null($objeto) ? '' : 'col-lg-5 col-lg-offset-1' }}"   style=" background-color:white;padding:0px;">
     <div class="col-xs-12 mark">
         <h3><i class="fa fa-eye"></i> OBJETOS MAS VISTOS </h3>
         <div class="indicator-down color-two-d"></div>
