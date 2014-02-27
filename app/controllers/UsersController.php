@@ -50,8 +50,15 @@ class UsersController extends BaseController {
 	public function getAudio($punto){
 		
 		$punto = Punto::find($punto);
-		Session::put('nav-'.$punto->id,true);;
+		Session::put('nav-'.$punto->id,true);
 		 
 		return View::make('user.guiaaudio',array('audio'=>$punto->id));
+	}
+	public function getOmitirRegistro(){
+		
+		 
+		Session::put('omitir',true);
+		 
+		return Redirect::home();
 	}
 }

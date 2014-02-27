@@ -1,7 +1,7 @@
 @extends('layout')
  
 @section('contenedor')
-  <div class="container">
+  <div class="container" style="padding-top: 50px;">
 
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
  

@@ -8,10 +8,14 @@
 
 	@include('nav',array('nav'=> array('inicio'=>URL::route('home'),'registro'=>'')))
 	
-	<div class="rows">
+	<div class="row">
 	
+		<div class="row mark">
+        		<h3><i class="fa fa-user fa-6"></i>Registro de nuevo usuario.</h3>
+    	</div>
+
   		<div class="col-lg-6 col-lg-offset-1">
-  		<h1><i class="fa fa-user fa-6"></i>Registro de nuevo usuario.</h1>	
+  		 
   		<hr>	
 		{{ Form::open(array( 'method' => 'POST', 'id'=>'form_registro') ) }}
      		@if ($errors->any())
@@ -50,9 +54,7 @@
 			{{Form::close()}}
 
  		</div>
- 		<div class="col-lg-5">
- 			{{HTML::image('assets/img/registro.png')}}
- 		</div>
+ 		 
   	</div>
   
 

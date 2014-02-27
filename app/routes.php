@@ -13,7 +13,12 @@
 
 Route::get('/',array( 'as'=>'home','after'=>'sumar_visita',function()
 {
-	return View::make('index');
+
+	if(Session::has('omitir') && false){
+		return View::make('index');
+	}else{
+		return View::make('user.acceso');
+	}	
 }));
 
 
