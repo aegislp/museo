@@ -7,10 +7,19 @@ class UsersController extends BaseController {
 	public function login(){
 
 	 	$campos = array('email' => Input::get('email'), 'password' => Input::get('pass'));
+
+
 	 	if (Auth::attempt($campos)){
+	 		Session::put('omitir',true);
 		    return Redirect::route('home');
 		}else{
-			echo "Usuario no loguead";
+			$error = array('error'=>'Usuario o password incorrecto');
+			if(Input::get('origen') =='acceso'){
+				return Redirect::action('UsersController@getAcceso')->withInput()->withErrors($error);
+			}else{
+				return Redirect::route('home')->withInput()->withErrors($error);
+			}
+			 	 
 		}
 	 }
 
@@ -52,7 +61,8 @@ class UsersController extends BaseController {
 		$punto = Punto::find($punto);
 		Session::put('nav-'.$punto->id,true);
 		 
-		return View::make('user.guiaaudio',array('audio'=>$punto->id));
+		return View::make('user.guiaaudio',array('audio'=>'inicio'));
+		//return View::make('user.guiaaudio',array('audio'=>$punto->id));
 	}
 	public function getOmitirRegistro(){
 		
@@ -61,4 +71,13 @@ class UsersController extends BaseController {
 		 
 		return Redirect::home();
 	}
+	public function getAcceso(){
+		return View::make('user.acceso');
+
+	}
+	public function getFormLogin(){
+		return View::make('user.login');
+
+	}
+
 }

@@ -5,8 +5,11 @@
 @stop
 
 @section('navegacion')
-	<li><a href="index.html"><i class="fa fa-cog"></i> Panel</a></li>
-    <li class="active"><i class="fa fa-table"></i> Salas</li>
+	<li><a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-cog"></i> Panel</a></li>
+	<li><a href="{{URL::action('AdminSalasController@getIndex')}}">
+		<i class="fa fa-home"></i> Salas</a>
+	</li>
+ 
     <li class="active"><i class="fa fa-table"></i> Objetos</li>
 @stop
 
@@ -46,13 +49,13 @@
 	      </ul>
 	    </div>
 	 @endif 
-	 
+	  
  	
  	@if(count($sala->objetos) > 0 )   
 		@foreach ($sala->objetos as $objeto)
 		<div class="thumbnail objeto">
 			{{HTML::image('assets/img/salas/'.$sala->id.'/objetos/'.$objeto->id.'_s.jpg','salas')}}
-		  	<div class="caption">
+		  	<div class="caption clearfix">
 		    	<h3 style="display:inline-block">{{$objeto->nombre}}</h3> 
 		    	<div class="btn-group" style="float:right">
 					<button type="button" class="btn_eliminar_obj btn btn-default" rel="{{$objeto->id}}"> 

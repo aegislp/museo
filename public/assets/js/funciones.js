@@ -132,12 +132,32 @@ function audio(event){
 		function(response){
 			$('#cont_audio').empty().append(response)
 			$('#modal_audio').modal('show');
+			$('#btn_cerrar_guia').click(cerrar_guia) 
+			$("#jquery_jplayer_1").jPlayer('play');
 			var clase = $(event.currentTarget).parent().parent().attr('class'); 
 			$(event.currentTarget).parent().parent().attr('class',clase.replace('nav','visitado') ); 
 		}
 	)
 }
+function cerrar_guia(event){
  
+	$('#modal_audio').modal('hide') ;
+	$("#jquery_jplayer_1").jPlayer('stop');
+			 
+}
+function getLogin(event){
+
+	event.preventDefault() 
+	$.get(
+		$(event.currentTarget).attr('rel') ,
+		function(response){
+			$('#detalle_objeto').empty().append(response);
+			$('#modal_login').modal('show');
+			 
+		}
+
+	)
+}
 $(document).ready(function(){
 
 	$(document).ajaxStart(mostrar_espera).ajaxStop(fin_mostrar_espera);
@@ -158,6 +178,8 @@ $(document).ready(function(){
 	$('.btn_objetos').click(info_objetos) 
 	$('.btn_like').click(me_gusta) 
 	$('.btn_audio').click(audio) 
+	$('.btn_login').click(getLogin) 
+	
 
 	$('#tabla_mensajes').find('tr').click(ver_mensaje);
 	 

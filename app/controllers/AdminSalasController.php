@@ -46,7 +46,7 @@ class AdminSalasController extends BaseController {
 				 
 			//imagen de portada
 			
-			Image::make($directorio.Input::get('portada'))->resize(150, 150,true)->save($directorio.'portada.jpg');		 
+			//Image::make($directorio.Input::get('portada'))->resize(150, 150,true)->save($directorio.'portada.jpg');		 
 			/*--------------------------------------*/	 
 			
 			return Redirect::action('AdminSalasController@getIndex')->with('nueva',$sala);

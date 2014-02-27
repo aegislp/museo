@@ -9,12 +9,40 @@
     img{
         max-width: 100%;
     }
+  
 </style>
 <div class="row">
-    <div class="col-md-12 header_sala">
+    <div class="col-md-6 header_sala clearfix">
         <h1>{{$seleccion->nombre}}</h1>
     </div>
-    <div class="col-md-4 col-xs-12 ">
+     <div class="col-md-4 col-xs-12 " id="img-sala-chica">
+       {{HTML::image('assets/img/salas/'.$seleccion->id.'/galeria/0_b.jpg')}}
+       
+    </div>
+    <div class="col-md-6 col-xs-12  header_sala menu_sala pull-right">  
+        <ul class="pull-right">
+            <li> 
+                <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}"> 
+                    <i class="fa fa-bars"></i>  
+                </a>
+            </li>  
+            <li> 
+                <a class="btn-trivia" rel="{{URL::action('SalasController@getTrivia',$seleccion->id)}}">
+                    <i class="fa fa-question"></i> 
+                </a>
+            </li>  
+            <li>
+                <a  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" class="btn-juego">
+                    <i class="fa fa-gamepad"></i>  
+                </a>
+            </li>  
+            <li><a rel="{{URL::action('SalasController@getMeGusta',$seleccion->id)}}"   class="btn_like"> 
+                    <i class="fa fa-thumbs-o-up"></i>  
+                </a>
+            </li>  
+        </ul>
+    </div>
+    <div class="col-md-4 col-xs-12 " id="img-grande">
        {{HTML::image('assets/img/salas/'.$seleccion->id.'/galeria/0_b.jpg')}}
        
     </div>
@@ -24,29 +52,7 @@
         </p>  
     </div>
 
-     <div class="col-md-12 col-xs-12">
-                    <ul>
-                        <li> 
-                            <a href="{{URL::action('SalasController@getObjetos',$seleccion->id)}}"> 
-                                <i class="fa fa-bars"></i>  
-                            </a>
-                        </li>  
-                        <li> 
-                            <a class="btn-trivia" rel="{{URL::action('SalasController@getTrivia',$seleccion->id)}}">
-                                <i class="fa fa-question"></i> 
-                            </a>
-                        </li>  
-                        <li>
-                            <a  rel="{{URL::action('SalasController@getBuscarObjeto',$seleccion->id)}}" class="btn-juego">
-                                <i class="fa fa-gamepad"></i>  
-                            </a>
-                        </li>  
-                        <li><a rel="{{URL::action('SalasController@getMeGusta',$seleccion->id)}}"   class="btn_like"> 
-                                <i class="fa fa-thumbs-o-up"></i>  
-                            </a>
-                        </li>  
-                    </ul>
-                </div>
+   
 </div> 
 
 <hr>
@@ -61,41 +67,7 @@
     </div>
 </div>   
  
-   
  
- 
-<div class="row">
-	
-	<select class="form-control input-lg" id="select_sala">
-		@foreach ($salas as $sala)	
-		<option value="{{$sala->id}}">{{$sala->nombre}}</option>
-		 @endforeach
-	</select>
-    
-	<div class="tabbable tabs-left">
-        
-        <div class="tab-content col-md-offset-2">
-          <div class="tab-pane active" id="contenedor_sala">
-            <div class="row header_sala">
-                
-               
-
-             
-            </div>
-      			 
-          
-            
-            
-            
- 
-        </div>
-        
-      </div>
-      <!-- /tabs -->
-      
-	 
-
-</div>
 <div id="juegos"></div>
  
 
@@ -109,9 +81,7 @@
 $(document).ready(function(){
 
     $('.fancybox').fancybox();
-
-
-     
+  
 })  
 
 </script>

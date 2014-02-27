@@ -7,7 +7,7 @@
 	.container-fluid{
 		 
 		text-align: center;
-		   padding-left: 0px !important;
+		padding-left: 0px !important;
     	padding-right: 0px !important;
     	height: 100%;
 
@@ -66,19 +66,28 @@
 		
 		<div class="col-sm-12 col-md-8">
 			<h4>Ingresa tu usuario para una mejor experiencia!!</h4>
-			<form role="form" method="POST" action="{{URL::to('login')}}">
-			  <div class="form-group">
-			     
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-			  </div>
-			  <div class="form-group">
-			    
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			  </div>
-			  
-			 
-			  <button type="submit" class="btn btn-default">Ingresar</button>
-			</form>
+			  @if ($errors->any())
+			    <div class="alert alert-danger">
+			      <button type="button" class="close" data-dismiss="alert">&times;</button>
+			      <strong>Ocurrio un error</strong>
+			      <ul>
+			      @foreach ($errors->all() as $error)
+			        <li>{{ $error }}</li>
+			      @endforeach
+			      </ul>
+			    </div>
+			  @endif 
+			{{Form::open(array('url'=> URL::to('login') ,'method'=>'POST'))}} 
+
+				<div class="form-group">
+			     	{{Form::email('email','Ingrese su email',array('class'=>'form-control'))}}
+			   	</div>
+			  	<div class="form-group">
+			    	{{Form::password('pass', array('class'=>'form-control'))}}
+			    </div>
+			  	{{Form::hidden('origen','acceso')}}
+			   	<button type="submit" class="btn btn-default">Ingresar</button>
+			{{Form::close()}}
 
 		</div>
 		<div class="col-md-4">

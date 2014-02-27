@@ -11,7 +11,15 @@ body{
  a:hover{
     text-decoration: none !important;
  }
-
+.fancybox{
+  display: inline-block;
+  background-color: #2d2d2d;
+  min-height: 7em;
+}
+.fancybox img{
+  display: inline-block;
+  vertical-align: top;
+}
  .modal-header{
     background-color: #F0523F;
     display:inline-block;
@@ -184,7 +192,39 @@ body{
     color: #FFFFFF;
   height: 4em; 
 }
-
+.header_sala,.menu_sala{
+      margin-bottom:  1em;
+}
+.header_sala h1{
+  float: left;
+  display: inline-block;
+}
+.menu_sala{
+  padding: 0px;
+}
+.menu_sala > ul{
+  width: 100%;
+  list-style: none;
+  height: 100%;
+  padding: 0px;
+}
+.menu_sala > ul > li{
+  width: 25%;
+  display: block;
+  float: left;
+  list-style: none;
+  height: 100%;
+  padding-top: 1em;
+  border-left:solid 2px white; 
+  text-align: center;
+   cursor: pointer;
+}
+.menu_sala > ul > li > a{
+  color:white;
+  text-align: center;
+ 
+}
+/*
 .header_sala >div > ul{
   width: 100%;
   display: inline-block;
@@ -206,7 +246,7 @@ body{
  
   font-size: 1.5em;
   text-align: center;
-} 
+} */
 .navbar-header a, .navbar-header button{
     color: white !important
 }
@@ -245,32 +285,32 @@ body{
  
 }  
 .busqueda_obj{
-              background: none repeat scroll 0 0 #2D2D2D;
-              margin-bottom: 1em;
-              height: 5em;
-              padding: 1em;
-        }
-        #busqueda_objeto input{
-            width: 85%;
-            float: left;
-            margin-right: 3px;
-        }
+  background: none repeat scroll 0 0 #2D2D2D;
+  margin-bottom: 1em;
+  height: 5em;
+  padding: 1em;
+}
+#busqueda_objeto input{
+  width: 85%;
+  float: left;
+  margin-right: 3px;
+}
         
-        .btn-obj{
-            padding: 7px 10px;
-        }
+.btn-obj{
+  padding: 7px 10px;
+}
 .flotante {
     
-    display:scroll;
-        position:fixed;
-        bottom:-2px;
-        right:0px;
-    background-color: #2D2D2D;    
-    width: 3em;
-    padding: 1em;
-    border-radius: 30px 2px 2px 30px;
-    margin-bottom: 1em;
-    color: #F0523F;
+  display:scroll;
+  position:fixed;
+  bottom:-2px;
+  right:0px;
+  background-color: #2D2D2D;    
+  width: 3em;
+  padding: 1em;
+  border-radius: 30px 2px 2px 30px;
+  margin-bottom: 1em;
+  color: #F0523F;
 }
 .flotante i{
     font-size: 3em;
@@ -300,10 +340,9 @@ body{
  
 .reyeno{
 
-   
-    height: 15% !important;
-    clear: both;
-    display: block;
+  height: 15% !important;
+  clear: both;
+  display: block;
     
 
 }
@@ -410,19 +449,82 @@ body{
   height: 50%;
   display: block;
 }
+.user_auth{
+    color:#F0523F;
+}
+#img-sala-chica{
+  display: none;
+}
+/* visita giada*/
+  .btn-circle {
+ 
+    border: 1px solid #FFFFFF !important;
+    border-radius: 22px !important;
+    padding: 1em !important;
+    color: white !important;
+
+}
+.botonera{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#jp_container_1{
+  width: 100%;
+  background-color: #2D2D2D;
+  color: white;
+  padding: 1em;
+
+}
+#jp_container_1 ul{
+  list-style: none;
+}
+.jp-controls{
+  float: left;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+    #modal_audio > .modal-content{
+        background-color: #FFFFFF;
+    }
+    .mod_audio > div{
+        height: 6em;
+    }
+    .mod_audio > .icono{
+         background-color: #F0523F;
+         padding: 1em;
+         text-align: center;
+    }
+      .mod_audio > .icono > i{
+       vertical-align: center;
+      
+       font-size: 4em;
+
+       color: white;
+    }
 @media   screen and (max-width: 800px) {
 
-     #ul_menu,#span_busqueda,#btn_nav_grande,.descripcion_salas,.maskara{
+    #img-grande,#ul_menu,#span_busqueda,#btn_nav_grande,.descripcion_salas,.maskara{
         display: none;
     }
     #imagen_acceso{
       display: block;
-      height: 45%;
+      height: 40%;
       position: relative;
-      z-index: 110;
+      z-index: -1;
 
     }
-    
-
+    #img-sala-chica{
+      display: block;
+      padding: 0px !important;
+      margin: 0px !important;
+    }
+    .menu_sala{
+      background-color: #2d2d2d;
+    }
+    .header_sala{
+      margin-bottom: 0px !important;
+    }
 }
 

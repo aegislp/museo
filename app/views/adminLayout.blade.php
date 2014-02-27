@@ -31,27 +31,19 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="@yield('/menu/inico')">
-              <a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
+              <a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-cog"></i> Inicio</a>
             </li>
             <li class="@yield('/menu/estadisticas')">
-              <a href=""><i class="fa fa-bar-chart-o"></i> Estadisticas</a></li>
+              <a href="{{URL::action('AdministracionController@getEstadisticas')}}"><i class="fa fa-bar-chart-o"></i> Estadisticas</a></li>
             <li class="@yield('/menu/salas')">
-              <a href="{{URL::action('AdminSalasController@getIndex')}}"><i class="fa fa-picture-o"></i>Salas</a>
+              <a href="{{URL::action('AdminSalasController@getIndex')}}"><i class="fa fa-picture-o"></i> Salas</a>
             </li>
             <li class="@yield('/menu/usuarios')">
               <a href="{{URL::action('AdministracionController@getUsuarios')}}"><i class="fa fa-group"></i> Usuarios</a>
             </li>
             <li class="@yield('/menu/mensajes')">
-              <a href="{{URL::action('AdministracionController@getMensajes')}}"><i class="fa fa-envelope"></i>Mensajes</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-sitemap"></i> Secciones <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">El Museo</a></li>
-              </ul>
-            </li>
+              <a href="{{URL::action('AdministracionController@getMensajes')}}"><i class="fa fa-envelope"></i> Mensajes</a></li>
+           
           </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">

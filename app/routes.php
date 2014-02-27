@@ -14,10 +14,11 @@
 Route::get('/',array( 'as'=>'home','after'=>'sumar_visita',function()
 {
 
-	if(Session::has('omitir') && false){
+	if(Session::has('omitir')  ){
 		return View::make('index');
 	}else{
-		return View::make('user.acceso');
+		return Redirect::action('UsersController@getAcceso');
+
 	}	
 }));
 

@@ -1,5 +1,9 @@
 @extends('layout')
  
+ @section('css')
+  {{ HTML::style('assets/css/estilo.css', array('media' => 'screen')) }}
+@stop 
+
 @section('contenedor')
   <div class="container" style="padding-top: 50px;">
 
@@ -43,33 +47,40 @@
                     <a href="{{ URL::action('MensajesController@index')}}">Contacto</a>
                 </li>
         </ul>
-      <form class="navbar-form navbar-left hide" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-        @if(Auth::check()) 
-            <ul class="nav navbar-nav navbar-right">
+    
+         <ul class="nav navbar-nav navbar-right" style="margin-right:1em" >
                  
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-user"></span>
-                    {{Auth::user()->usuario}} <b class="caret"></b></a>
+                    @if(Auth::check()) 
+                         <span class="glyphicon glyphicon-user user_auth"></span>
+                         {{Auth::user()->usuario}} 
+                    @else
+                        <span class="glyphicon glyphicon-user"></span>
+                    @endif 
+                    
+                     <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="{{URL::action('UsersController@logout')}}">Salir</a></li>
-                     
+                     @if(Auth::check()) 
+
+                      
+                        <li><a href="{{URL::action('UsersController@logout')}}">Salir</a></li>
+                    @else
+                        
+                        <li><a class="btn_login" rel="{{URL::action('UsersController@getFormLogin')}}" href="#">Ingresar</a></li>
+                        <li><a href="{{URL::action('UsersController@getRegistro')}}">Registrase</a></li>
+                      @endif
                   </ul>
                 </li>
-            </ul>
-            @endif
+            </ul>   
+           
     </div><!-- /.navbar-collapse -->
  
   <div class="row clearfix">
  
 
   <div class="col-lg-6 collapse busqueda" id="collapseOne" >
-        {{Form::open(array('method'=>'post','role'=>'search','class'=>'form-search clearfix'))}}
+        {{Form::open(array('method'=>'post','url'=>URL::action('ObjetosController@postIndex'),'role'=>'search','class'=>'form-search clearfix'))}}
        
             <input class="form-control" type="text" placeholder="codigo de objeto" name="codigo" style="width:75%;float:left" />
            <button type="submit" class="btn btn-default btn-sm">

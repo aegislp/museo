@@ -25,7 +25,7 @@
 			</a>
 	    </div>
 	  
-	     <button type="submit" class="btn btn-default pull-right">
+	     <button type="submit" class="btn btn-primary pull-right">
 	   		<span class="glyphicon glyphicon-floppy-disk"></span>Guardar Todo
 		</button>
 	 
@@ -93,7 +93,7 @@
  <br>	
 <nav class="navbar navbar-default" role="navigation">
 	<div class="navbar-header pull-right">
-	    <button type="submit" class="btn btn-default">
+	    <button type="submit" class="btn btn-primary">
 	   		<span class="glyphicon glyphicon-floppy-disk"></span>Guardar Todo
 		</button>
 	</div>

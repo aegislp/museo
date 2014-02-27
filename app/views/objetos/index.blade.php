@@ -69,13 +69,13 @@ m_activo
 
     @foreach($destacados as $destacado) 
     
-    <div class=" {{ is_null($objeto) ? 'col-xs-6 col-lg-3' : 'col-lg-6 ' }}" >
-    <div   rel="{{URL::action('ObjetosController@getDetalle',$destacado->id)}}"  class="btn_objetos thumbnail">
+    <div class=" {{ is_null($objeto) ? 'col-xs-6 col-lg-3' : 'col-lg-6 col-xs-6 ' }}" >
+        <div   rel="{{URL::action('ObjetosController@getDetalle',$destacado->id)}}"  class="btn_objetos thumbnail">
 
-      {{HTML::image('assets/img/salas/'.$destacado->sala->id.'/objetos/'.$destacado->id.'_b.jpg')}}
+          {{HTML::image('assets/img/salas/'.$destacado->sala->id.'/objetos/'.$destacado->id.'_b.jpg')}}
 
-      <div class="caption"><h4>{{$destacado->nombre}}</h4></div>
-    </div>
+          <div class="caption"><h4>{{$destacado->nombre}}</h4></div>
+        </div>
     </div>
      @endforeach
 

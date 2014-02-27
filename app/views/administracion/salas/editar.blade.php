@@ -1,9 +1,19 @@
 @extends('adminLayout')
+
+@section('navegacion')
+	<li><a href="{{URL::action('AdministracionController@getIndex')}}"><i class="fa fa-cog"></i> Panel</a></li>
+	<li><a href="{{URL::action('AdminSalasController@getIndex')}}">
+		<i class="fa fa-home"></i> Salas</a>
+	</li>
+    <li class="active"><i class="fa fa-edit"></i> {{$sala->nombre}}</li>
+@stop
+
+
 @section('contenido')
 
 <nav class="navbar navbar-default barra" role="navigation">
 	<h4 style="display:inline-block"><span class="glyphicon glyphicon-home"></span>  Datos de la sala</h4>
-	<button  class="btn btn-default btn-sm navbar-btn" type="submit">
+	<button  class="btn btn-primary btn-sm navbar-btn  pull-right" type="submit">
 		<span class="glyphicon glyphicon-floppy-disk"></span>
 		Guardar todo
 	</button>
@@ -52,16 +62,16 @@
 <div style="display:inline-block;width:100%" >
 @foreach( File::glob('assets/img/salas/'.$sala->id.'/galeria/*_s.jpg')  as $imagen)
 	
-	    <div class="thumbnail col-lg-4" id="{{ str_replace('.','',basename($imagen)) }}">
+	    <div class="thumbnail col-lg-3" id="{{ str_replace('.','',basename($imagen)) }}">
 	      
-	      <div class="caption">
-	      	<input type="radio" name="portada" value="{{ basename($imagen)  }}">portada de sala
-	      	<button aria-hidden="true"  class="close" type="button" rel="{{URL::action('AdminSalasController@postEliminarImagenSala').'/'.str_replace('assets/img/salas/'.$sala->id.'/galeria/','',$imagen)}}">×</button>
-		    
-		    <br><br>
-		    <a class="fancybox" href=" {{asset(str_replace('_s','_b',$imagen))}}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
-	        	{{HTML::image($imagen)}}
-	        </a>
+	      <div class="caption row">
+	      	<div class="col-lg-12 header_caption">
+	      		<input type="radio" name="portada" value="{{ basename($imagen)  }}">portada de sala
+	      		<button aria-hidden="true"  class="close" type="button" rel="{{URL::action('AdminSalasController@postEliminarImagenSala').'/'.str_replace('assets/img/salas/'.$sala->id.'/galeria/','',$imagen)}}">×</button>
+		    </div>
+		     
+			{{HTML::image($imagen,'',array('class'=>"col-lg-12"))}}
+	      
 	      </div>
 	    </div>
 	
@@ -73,7 +83,7 @@
 
 <nav class="navbar navbar-default barra" role="navigation">
 	 
-	<button  type="submit"  class="btn btn-default btn-sm navbar-btn">
+	<button  type="submit"  class="btn btn-primary btn-sm navbar-btn pull-right">
 		<span class="glyphicon glyphicon-floppy-disk"></span>
 		Guardar todo
 	</button>
