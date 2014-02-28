@@ -59,4 +59,17 @@ class ObjetosController extends \BaseController {
 		$respuesta['codigo'] = 'ok';
 		return Response::json($respuesta);
 	}
+
+	public function getQr($objeto_id){
+
+		$objeto = Objeto::findOrFail($objeto_id);
+
+		echo  DNS2D::getBarcodeHTML($objeto->id, "QRCODE");
+	}
+
+	public function getInfoMovil($objeto_id){
+
+		$objeto = Objeto::findOrFail($objeto_id);
+		return View::make('objetos.info_movil',array('objeto'=>$objeto));
+	}
  }
