@@ -22,6 +22,12 @@
         <button class="navbar-toggle"  type="button" >
             <a   href="{{URL::action('UsersController@getNavegacion')}}"><i class="fa fa-map-marker"></i></a>
         </button>
+        <a   href="{{URL::asset('assets/museo.apk') }}" id="btn_andorid">
+          <button class="navbar-toggle"  type="button" >
+              <i class="fa fa-android"></i>
+          </button>  
+         </a>
+       
         <a href="" class="navbar-brand">Museo</a>
     </div>
 
@@ -45,6 +51,13 @@
                 
                 <li class="@yield('/menu/contacto')">
                     <a href="{{ URL::action('MensajesController@index')}}">Contacto</a>
+                </li>
+                <li class="@yield('/menu/contacto')">
+                      <a   href="{{URL::asset('assets/museo.apk') }}" id="btn_andorid"  style="padding:15px;">
+                       
+                          <i class="fa fa-android"></i>
+                       
+                     </a>
                 </li>
         </ul>
     

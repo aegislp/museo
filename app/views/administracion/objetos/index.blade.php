@@ -64,6 +64,9 @@
 					<a type="button" class="btn btn-default" href="{{URL::action('AdminObjetosController@getEditar',$objeto->id)}}"> 
 						<span class="glyphicon glyphicon-pencil"></span>
 					</a>
+					<a target="__balck" type="button" class="btn btn-default" href="{{URL::action('ObjetosController@getQr',$objeto->id)}}"> 
+						<i class="fa fa-qrcode"></i>
+					</a>
 				</div>
 		    	<p>{{$objeto->descripcion}}</p>
 		 

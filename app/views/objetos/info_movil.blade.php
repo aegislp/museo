@@ -1,7 +1,6 @@
  <div class="row-fluid clearfix">
 		 
-	        <div id="reproductor" rel="audio/inicio.mp3"></div>
-	        <div id="reproductor" rel="{{URL::asset('objetos/'.$objeto->sala->id.'/audio.mp3')}}"></div>
+	        <div id="reproductor" rel="{{ URL::asset('assets/objetos/'.$objeto->id.'/audio.mp3')}}"></div>
 	        <div id="r_contenedor">
 	         	
 	            <div class="col-xs-12">
@@ -37,8 +36,7 @@
 		<div class="row-fluid descripcion">
 			<h2>{{$objeto->nombre}}</h2>
 			<p>{{$objeto->nombre_cientifico}}</p>
-			<p>Datos 1</p>
-			<p>Dato 2 1</p>
+			 
 		</div>
 		<div class="row-fluid descripcion">
 			{{$objeto->descripcion}}
