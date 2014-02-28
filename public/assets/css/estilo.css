@@ -440,15 +440,7 @@ body{
 .popover{
   max-width: 45% !important;
 }
-#imagen_acceso{
-    position: absolute; left:0; top: 0; width: 100%; height:100%; 
-    z-index: -9999;
-    background-color: #2d2d2d;
-}
-.maskara{
-  height: 50%;
-  display: block;
-}
+
 .user_auth{
     color:#F0523F;
 }

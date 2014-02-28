@@ -52,6 +52,18 @@
 		background-color: #F0523F !important;
 		color:white !important; 
 	}
+	#imagen_acceso{
+    position: absolute; left:0; top: 0; width: 100%; height:100%; 
+    z-index: -9999;
+    background-color: #2d2d2d;
+}
+.maskara{
+  height: 50%;
+  display: block;
+}
+.botones{
+	margin-top: 15em !important;
+}
 </style>
 <div class="container-fluid" id="cont_acceso">
 		 
