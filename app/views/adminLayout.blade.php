@@ -53,7 +53,7 @@
               </a>
               <ul class="dropdown-menu">
                 
-                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                <li><a href="{{URL::to('logout')}}"><i class="fa fa-power-off"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>
